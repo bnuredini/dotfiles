@@ -1,0 +1,59 @@
+# working with directories
+alias d="cd downloads"
+alias b="cd books"
+alias ubt="cd ubt/sem3"
+alias ...="cd ../.."
+alias ....="cd ../../..."
+
+# ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ubtush='cd ~/ubt/sem3/shk2/ushtrimet/ush-tmp/src'
+
+# book aliases
+alias bti='zathura ~/bleart/UBT1/sem1/bti/literatura/The Architecture of Computer Hardware'
+alias aok='zathura ~/bleart/UBT/viti1/sem2/aok/resurset/"Stallings - Computer Organization and Architecture Designing for Performance.pdf"'
+alias algo='mupdf ~/books/cs/algorithms/"Sedgewick & Wayne - Algorithms.pdf"' 
+alias j='zathura ~/books/cs/programming/java_books/Eckel\ -\ Thinking\ in\ Java.pdf &'
+alias calc='mupdf ~/bleart/books/math/calculus/"Stewart - Calculus: Early Transcendentals.pdf"'
+
+# my aliases
+alias td='vim ~/documents/Dropbox/todo.txt'
+alias v='vim'
+alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
+alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
+alias r='ranger'
+
+# volume aliases
+alias am='amixer set Master 100'	# set max
+alias ah='amixer set Master 50'		# set medium
+alias a0='amixer set Master 0'		# set zero
+alias vm='pactl set-sink-volume @DEFAULT_SINK@ 150%'
+
+
+# aliases for notes
+alias qdsnotes='vim ~/ubt/sem2/qds/resurset/shenime.md'
+alias aoknotes='vim ~/ubt/sem2/aok/resurset/shenime.md'
+
+alias sbdnotes='vim ~/ubt/sem3/sbd/shenimet/sh.md'
+alias makesbdnotes='pandoc -o ~/ubt/sem3/sbd/shenimet/sh.pdf ~/ubt/sem3/sbd/shenimet/sh.md' 
+alias viewsbdnotes='zathura ~/ubt/sem3/sbd/shenimet/sh.pdf'
+
+alias rrjetetnotes='vim ~/ubt/sem3/rrjetet/shenimet/sh.md'
+alias makerrjetetnotes='pandoc -o ~/ubt/sem3/rrjetet/shenimet/sh.pdf ~/ubt/sem3/rrjetet/shenimet/sh.md' 
+alias viewrrjetetnotes='zathura ~/ubt/sem3/rrjetet/shenimet/sh.pdf'
+
+alias algo2notes='vim ~/ubt/sem3/algo2/shenimet/sh.md'
+alias makealgo2notes='pandoc -o ~/ubt/sem3/algo2/shenimet/sh.pdf ~/ubt/sem3/algo2/shenimet/sh.md' 
+alias viewalgo2notes='zathura ~/ubt/sem3/algo2/shenimet/sh.pdf'
+
+alias iwnotes='vim ~/ubt/sem3/iw/shenimet/sh.md'
+alias makeiwnotes='pandoc -o ~/ubt/sem3/iw/shenimet/sh.pdf ~/ubt/sem3/iw/shenimet/sh.md'
+alias viewiwnotes='zathura ~/ubt/sem3/iw/shenimet/sh.pdf'
+
+alias sd1notes='vim ~/ubt/sem3/sd1/shenimet/sh.md'
+alias makesd1notes='pandoc -o ~/ubt/sem3/sd1/shenimet/sh.pdf ~/ubt/sem3/sd1/shenimet/sh.md'
+alias viewsd1notes='zathura ~/ubt/sem3/sd1/shenimet/sh.pdf'
+
+alias shk2notes='vim ~/ubt/sem3/shk2/shenimet/sh.md'
