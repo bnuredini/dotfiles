@@ -19,7 +19,7 @@ alias j='zathura ~/books/cs/programming/java_books/Eckel\ -\ Thinking\ in\ Java.
 alias calc='mupdf ~/bleart/books/math/calculus/"Stewart - Calculus: Early Transcendentals.pdf"'
 
 # my aliases
-alias td='vim ~/documents/Dropbox/todo.txt'
+alias td='vim ~/.calcurse/todo'
 alias v='vim'
 alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
 alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
@@ -57,3 +57,5 @@ alias makesd1notes='pandoc -o ~/ubt/sem3/sd1/shenimet/sh.pdf ~/ubt/sem3/sd1/shen
 alias viewsd1notes='zathura ~/ubt/sem3/sd1/shenimet/sh.pdf'
 
 alias shk2notes='vim ~/ubt/sem3/shk2/shenimet/sh.md'
+alias makeshk2notes='pandoc -o ~/ubt/sem3/shk2/shenimet/sh.pdf ~/ubt/sem3/shk2/shenimet/sh.md'
+alias viewshk2notes='zathura ~/ubt/sem3/shk2/shenimet/sh.pdf'
