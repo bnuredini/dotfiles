@@ -1,11 +1,10 @@
-" directory for plugins 
-call plug#begin('~/.vim/plugged')
-
 " plugins 
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'artur-shaik/vim-javacomplete2'
 call plug#end()
 
 syntax on
@@ -23,22 +22,21 @@ set shiftwidth=4
 set expandtab
 
 " coloscheme pywal
-    colorscheme wal
-    " colorscheme gruvbox
+colorscheme wal
+" colorscheme gruvbox
 
 " replace 'w' with 'ë' 
-    nmap	<F2>	:%s/w/ë/g<CR>
-    nmap	<F3>	:%s/@/ç/g<CR>
-    nmap    <F4>    :%s/@/w/g<CR>
+nmap	<F2>	:%s/w/ë/g<CR>
+nmap	<F3>	:%s/@/ç/g<CR>
+nmap    <F4>    :%s/@/w/g<CR>
 " enable english spellchecker
-    map <leader>o   :setlocal spell! spelllang=en_us<CR>
+map <leader>o   :setlocal spell! spelllang=en_us<CR>
 " enabel distraction-free mode
-    map <space>f    :Goyo<CR>   
-    map <space>F    :Goyo!<CR>
+map <space>f    :Goyo<CR>   
+map <space>F    :Goyo!<CR>
 
 " fzf
     map <space>o		:Files<CR>
 "    map <space>o		:exe ":FZF " . expand("%:h")<CR>
 "    map '/		:!fzf<CR>
 "    set rtp+=~/.config/.fzf
-"    map '/		:!fzf<CR>
