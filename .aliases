@@ -4,6 +4,7 @@ alias b="cd books"
 alias ubt="cd ubt/sem3"
 alias ...="cd ../.."
 alias ....="cd ../../..."
+alias iw="cd code/web/iw-project"
 
 # ls aliases
 alias ll='ls -alF'
@@ -15,15 +16,16 @@ alias ubtush='cd ~/ubt/sem3/shk2/ushtrimet/ush-tmp/src'
 alias bti='zathura ~/bleart/UBT1/sem1/bti/literatura/The Architecture of Computer Hardware'
 alias aok='zathura ~/bleart/UBT/viti1/sem2/aok/resurset/"Stallings - Computer Organization and Architecture Designing for Performance.pdf"'
 alias algo='mupdf ~/books/cs/algorithms/"Sedgewick & Wayne - Algorithms.pdf"' 
-alias j='zathura ~/books/cs/programming/java_books/Eckel\ -\ Thinking\ in\ Java.pdf &'
+alias j='zathura ~/books/cs/programming/java_books/Eckel\ -\ Thinking\ in\ Java.pdf&'
 alias calc='mupdf ~/bleart/books/math/calculus/"Stewart - Calculus: Early Transcendentals.pdf"'
 
 # my aliases
 alias td='vim ~/.calcurse/todo'
 alias v='vim'
+alias r='ranger'
 alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
 alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
-alias r='ranger'
+alias rclases='rm *.class'
 
 # volume aliases
 alias am='amixer set Master 100'	# set max
