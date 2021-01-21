@@ -1,11 +1,17 @@
 # working with directories
-alias d="cd downloads"
-alias b="cd books"
-alias ubt="cd ubt/sem3"
+alias d="cd ~/downloads"
+alias b="cd ~/books"
+alias ubt="cd ~/ubt/sem3"
 alias ubtush='cd ~/ubt/sem3/shk2/ushtrimet/ush-tmp/src'
-alias iw="cd code/web/iw-project"
+alias iw="cd ~/code/web/iw-project"
+alias algs4-2="cd ~/code/j/algs4-2/src"
 alias ...="cd ../.."
 alias ....="cd ../../..."
+
+# tmp
+alias algo2="nvim ~/ubt/sem3/algo2/kollokviumi1.txt"
+alias xampp="sudo /opt/lampp/manager-linux-x64.run && sudo apachectl stop"
+alias main='javac Main.java && java Main'
 
 # ls aliases
 alias ll='ls -alF'
@@ -14,15 +20,17 @@ alias l='ls -CF'
 
 # my aliases
 alias v='nvim'
+alias vim='nvim'
 alias td='nvim ~/.calcurse/todo'
 alias notes='nvim ~/documents/notes.md'
-alias conf='nvim ~/.config/nnvim/init.nvim'
+alias conf='nvim ~/.config/nvim/init.vim'
 alias i3config='nvim .config/i3/config'
-alias rclases='rm *.class'
+alias rmc='rm *.class'
 alias r='ranger'
 alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
 alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
 alias z='fzf --bind "enter:execute(zathura {}&)"'
+alias ascii='nvim ~/downloads/ascii-codes.txt'
 
 # volume aliases
 alias am='amixer set Master 100'	# set max
@@ -49,12 +57,11 @@ alias makealgo2notes='pandoc -o ~/ubt/sem3/algo2/shenimet/sh.pdf ~/ubt/sem3/algo
 alias viewalgo2notes='zathura ~/ubt/sem3/algo2/shenimet/sh.pdf'
 
 alias iwnotes='nvim ~/ubt/sem3/iw/shenimet/sh.md'
-alias makeiwnotes='pandoc -o ~/ubt/sem3/iw/shenimet/sh.pdf ~/ubt/sem3/iw/shenimet/sh.md'
-alias viewiwnotes='zathura ~/ubt/sem3/iw/shenimet/sh.pdf'
+alias viewiwnotes='pandoc -o ~/ubt/sem3/iw/shenimet/sh.pdf ~/ubt/sem3/iw/shenimet/sh.md && zathura ~/ubt/sem3/iw/shenimet/sh.pdf'
 
 alias sd1notes='nvim ~/ubt/sem3/sd1/shenimet/sh.md'
 alias makesd1notes='pandoc -o ~/ubt/sem3/sd1/shenimet/sh.pdf ~/ubt/sem3/sd1/shenimet/sh.md'
-alias viewsd1notes='zathura ~/ubt/sem3/sd1/shenimet/sh.pdf'
+alias viewsd1notes='pandoc -o ~/ubt/sem3/sd1/shenimet/sh.pdf ~/ubt/sem3/sd1/shenimet/sh.md && zathura ~/ubt/sem3/sd1/shenimet/sh.pdf'
 
 alias shk2notes='nvim ~/ubt/sem3/shk2/shenimet/sh.md'
 alias makeshk2notes='pandoc -o ~/ubt/sem3/shk2/shenimet/sh.pdf ~/ubt/sem3/shk2/shenimet/sh.md'
