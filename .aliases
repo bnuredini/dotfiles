@@ -3,8 +3,9 @@ alias d="cd ~/downloads"
 alias b="cd ~/books"
 alias ubt="cd ~/ubt/sem3"
 alias ubtush='cd ~/ubt/sem3/shk2/ushtrimet/ush-tmp/src'
-alias iw="cd ~/code/web/iw-project"
+alias iw="cd /var/www/html/iw"
 alias algs4-2="cd ~/code/j/algs4-2/src"
+alias j="cd ~/code/j/randoms"
 alias ...="cd ../.."
 alias ....="cd ../../..."
 
@@ -12,19 +13,21 @@ alias ....="cd ../../..."
 alias algo2="nvim ~/ubt/sem3/algo2/kollokviumi1.txt"
 alias xampp="sudo /opt/lampp/manager-linux-x64.run && sudo apachectl stop"
 alias main='javac Main.java && java Main'
+alias sbd="cd ~/ubt/sem3/sbd/projekti"
 
 # ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lsj='ls | grep .java'
 
 # my aliases
 alias v='nvim'
 alias vim='nvim'
-alias td='nvim ~/.calcurse/todo'
+alias td='nvim ~/documents/todo.txt'
 alias notes='nvim ~/documents/notes.md'
 alias conf='nvim ~/.config/nvim/init.vim'
-alias i3config='nvim .config/i3/config'
+alias i3config='nvim ~/.config/i3/config'
 alias rmc='rm *.class'
 alias r='ranger'
 alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
