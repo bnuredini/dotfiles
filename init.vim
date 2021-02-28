@@ -4,16 +4,15 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-sensible'
     Plug 'junegunn/goyo.vim'
-    Plug 'Shougo/deoplete.nvim'
     Plug 'mattn/emmet-vim'
     Plug 'godlygeek/csapprox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'flazz/vim-colorschemes'
     Plug 'rakr/vim-one'
+    Plug 'vimwiki/vimwiki'
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
 syntax on
 filetype plugin indent on
 "set t_Co=256
@@ -34,7 +33,8 @@ nmap <F2>       :%s/w/ë/g<CR>
 nmap <F3>       :%s/@/ç/g<CR>
 nmap <F4>       :%s/@/w/g<CR>
 nmap <F9>       :%s/W/Ë/g<CR>
-nmap <F7>       :!javac % && java -cp %:p:h %:t:r<CR>
+nmap <F7>       :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
+nmap <F8>       :w<CR>:!ls<CR>
 " enable english spellchecker
 map <leader>o   :setlocal spell! spelllang=en_us<CR>
 " enabel distraction-free mode
