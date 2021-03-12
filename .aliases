@@ -1,7 +1,7 @@
 # working with directories
 alias d="cd ~/downloads"
 alias b="cd ~/books"
-alias ubt="cd ~/ubt/sem3"
+alias ubt="cd ~/ubt/sem4"
 alias ubtush='cd ~/ubt/sem3/shk2/ushtrimet/ush-tmp/src'
 alias iw="cd /var/www/html/iw"
 alias algs4-2="cd ~/code/j/algs4-2/src"
