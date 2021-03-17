@@ -63,3 +63,5 @@ autocmd Filetype css setlocal tabstop=2
 autocmd Filetype css setlocal shiftwidth=2
 autocmd Filetype php setlocal tabstop=2
 autocmd Filetype php setlocal shiftwidth=2
+autocmd Filetype js setlocal tabstop=2
+autocmd Filetype js setlocal shiftwidth=2
