@@ -199,8 +199,8 @@ exec picom  --config ~/.config/picom.conf
 
 # keys for programs
 bindsym $mod+c 			exec --no-startup-id /usr/bin/calibre
-bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
-bindsym $mod+b			exec --no-startup-id /snap/bin/brave
+# bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
+bindsym $mod+b			exec --no-startup-id /snap/bin/brave-browser
 bindsym $mod+o 			exec urxvt -e "ranger"
 bindsym $mod+m			exec urxvt -e "cmus"
 bindsym $mod+t			exec dolphin
