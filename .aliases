@@ -15,6 +15,7 @@ alias xampp="sudo /opt/lampp/manager-linux-x64.run && sudo apachectl stop"
 alias main='javac Main.java && java Main'
 alias sbd="cd ~/ubt/sem3/sbd/projekti"
 alias play="cd ~/Code/playground" # for work!
+alias ch="chromium-browser --disable-web-security --user-data-dir='./downloads/tmp'&"
 
 # ls aliases
 alias ll='ls -alF'
