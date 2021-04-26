@@ -193,29 +193,27 @@ bindsym $mod+Shift+z		gaps outer current minus 5
 bindsym $mod+Shift+d		gaps inner current set 0;  gaps outer current set 0
 bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
 
-# set pape
-exec feh    --bg-scale ~/media/images/wallpapers/forrest.jpg
-exec picom  --config ~/.config/picom.conf
+# startup
+exec feh    --bg-scale ~/media/images/wallpapers/forrest.jpg    # set pape
+exec picom  --config ~/.config/picom.conf                       # use picom
+exec --no-startup-id python3 ~/.config/i3/i3-swallow.py         # swallow
+exec --no-startup-id ~/.config/i3/alternating_layouts.py        # better layout
+# exec --no-startup-id dropbox start                            # dropbox 
 
 # keys for programs
-bindsym $mod+c 			exec --no-startup-id /usr/bin/calibre
-# bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
 bindsym $mod+b			exec --no-startup-id /usr/bin/brave-browser
+bindsym $mod+c 			exec --no-startup-id /usr/bin/calibre
 bindsym $mod+o 			exec urxvt -e "ranger"
 bindsym $mod+m			exec urxvt -e "cmus"
+bindsym $mod+Shift+p    exec urxvt -e "sxiv -t /home/bleart/media/photos/100andro"
 bindsym $mod+t			exec dolphin
 bindsym $mod+p			exec speedcrunch
 
 # rofi
-# bindsym $mod+Shift+f	exec exec "rofi -show window"
-# bindsym $mod+q exec "rofi -modi window,drun,run -show drun -sidebar-mode -terminal termite -color-window '#000000, #000000, #000000' -color-normal '#000000, #b3e774, #000000, #b3e774, #000000' -color-active '#000000, #b3e774, #000000, #b3e774, #000000' -color-urgent '#000000, #b3e774, #000000, #b3e774, #000000'"
-bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -terminal termite -color-window '#ffffff, #ffffff, #ffffff' -color-normal '#ffffff, #aaaaaa, #ffffff, #549c58, #ffffff' -color-active '#ffffff, #aaaaaa, #ffffff, #aa0000, #ffffff' -color-urgent '#ffffff, #aa0000, #ffffff, #aa0000, #ffffff'"
+bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -show-icons -terminal termite -color-window '#ffffff, #ffffff, #ffffff' -color-normal '#ffffff, #aaaaaa, #ffffff, #549c58, #ffffff' -color-active '#ffffff, #aaaaaa, #ffffff, #aa0000, #ffffff' -color-urgent '#ffffff, #aa0000, #ffffff, #aa0000, #ffffff'"
 
 # polybar
 # exec_always --no-startup-id ~/.i3/polybar.sh &
-
-# dropbox 
-# exec --no-startup-id dropbox start 
 
 # tmp
 set_from_resource $fg i3wm.color7 #f0f0f0
