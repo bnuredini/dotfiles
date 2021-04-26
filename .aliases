@@ -29,13 +29,14 @@ alias vim='nvim'
 alias td='nvim ~/documents/todo.txt'
 alias work='nvim ~/Dropbox/work-todo.txt'
 alias notes='nvim ~/documents/notes.md'
-alias conf='nvim ~/.config/nvim/init.vim'
+alias images='sxiv -tf ~/media/photos/100andro/'
+alias vimconf='nvim ~/.config/nvim/init.vim'
 alias i3conf='nvim ~/.config/i3/config'
 alias rmc='rm *.class'
 alias r='ranger'
+alias z='fzf --bind "enter:execute(zathura {}&)"'
 alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
 alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
-alias z='fzf --bind "enter:execute(zathura {}&)"'
 alias ascii='nvim ~/downloads/ascii-codes.txt'
 
 # volume aliases
@@ -43,32 +44,3 @@ alias am='amixer set Master 100'	# set max
 alias ah='amixer set Master 50'		# set medium
 alias a0='amixer set Master 0'		# set zero
 alias vm='pactl set-sink-volume @DEFAULT_SINK@ 150%'
-
-
-
-# aliases for notes
-alias qdsnotes='nvim ~/ubt/sem2/qds/resurset/shenime.md'
-alias aoknotes='nvim ~/ubt/sem2/aok/resurset/shenime.md'
-
-alias sbdnotes='nvim ~/ubt/sem3/sbd/shenimet/sh.md'
-alias makesbdnotes='pandoc -o ~/ubt/sem3/sbd/shenimet/sh.pdf ~/ubt/sem3/sbd/shenimet/sh.md' 
-alias viewsbdnotes='zathura ~/ubt/sem3/sbd/shenimet/sh.pdf'
-
-alias rrjetetnotes='nvim ~/ubt/sem3/rrjetet/shenimet/sh.md'
-alias makerrjetetnotes='pandoc -o ~/ubt/sem3/rrjetet/shenimet/sh.pdf ~/ubt/sem3/rrjetet/shenimet/sh.md' 
-alias viewrrjetetnotes='zathura ~/ubt/sem3/rrjetet/shenimet/sh.pdf'
-
-alias algo2notes='nvim ~/ubt/sem3/algo2/shenimet/sh.md'
-alias makealgo2notes='pandoc -o ~/ubt/sem3/algo2/shenimet/sh.pdf ~/ubt/sem3/algo2/shenimet/sh.md' 
-alias viewalgo2notes='zathura ~/ubt/sem3/algo2/shenimet/sh.pdf'
-
-alias iwnotes='nvim ~/ubt/sem3/iw/shenimet/sh.md'
-alias viewiwnotes='pandoc -o ~/ubt/sem3/iw/shenimet/sh.pdf ~/ubt/sem3/iw/shenimet/sh.md && zathura ~/ubt/sem3/iw/shenimet/sh.pdf'
-
-alias sd1notes='nvim ~/ubt/sem3/sd1/shenimet/sh.md'
-alias makesd1notes='pandoc -o ~/ubt/sem3/sd1/shenimet/sh.pdf ~/ubt/sem3/sd1/shenimet/sh.md'
-alias viewsd1notes='pandoc -o ~/ubt/sem3/sd1/shenimet/sh.pdf ~/ubt/sem3/sd1/shenimet/sh.md && zathura ~/ubt/sem3/sd1/shenimet/sh.pdf'
-
-alias shk2notes='nvim ~/ubt/sem3/shk2/shenimet/sh.md'
-alias makeshk2notes='pandoc -o ~/ubt/sem3/shk2/shenimet/sh.pdf ~/ubt/sem3/shk2/shenimet/sh.md'
-alias viewshk2notes='zathura ~/ubt/sem3/shk2/shenimet/sh.pdf'
