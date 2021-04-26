@@ -26,7 +26,7 @@ set expandtab
 set clipboard=unnamed
 set textwidth=88
 set mouse=a
-" set colorcolumn=88
+"  set colorcolumn=88
 
 " replace 'w' with 'ë' 
 nmap <F2>       :%s/w/ë/g<CR>
@@ -67,5 +67,5 @@ autocmd Filetype js setlocal tabstop=2
 autocmd Filetype js setlocal shiftwidth=2
 
 
-" vimwiki: change directory of the wiki
+" vimwiki: change wiki directory
 let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
