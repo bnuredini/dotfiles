@@ -190,7 +190,7 @@ bindsym $mod+p			exec speedcrunch
 bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -show-icons -terminal termite -color-window '#ffffff, #ffffff, #ffffff' -color-normal '#ffffff, #aaaaaa, #ffffff, #549c58, #ffffff' -color-active '#ffffff, #aaaaaa, #ffffff, #aa0000, #ffffff' -color-urgent '#ffffff, #aa0000, #ffffff, #aa0000, #ffffff'"
 
 # polybar
-# exec_always --no-startup-id ~/.i3/polybar.sh &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # tmp
 set_from_resource $fg i3wm.color7 #f0f0f0
