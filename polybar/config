@@ -187,7 +187,7 @@ type = internal/xbacklight
 format = <label> <bar>
 label = BL
 
-bar-width = 10
+bar-width = 100%
 bar-indicator = |
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
