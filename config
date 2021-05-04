@@ -180,7 +180,7 @@ exec --no-startup-id ~/.config/i3/alternating_layouts.py        # better layout
 # keys for programs
 bindsym $mod+b			exec --no-startup-id /usr/bin/brave-browser
 bindsym $mod+c 			exec --no-startup-id /usr/bin/calibre
-bindsym $mod+o 			exec urxvt -e "ranger"
+bindsym $mod+o 			exec urxvt -e "lf"
 bindsym $mod+m			exec urxvt -e "cmus"
 bindsym $mod+Shift+p    exec urxvt -e "sxiv -t /home/bleart/media/photos/100andro"
 bindsym $mod+t			exec thunar

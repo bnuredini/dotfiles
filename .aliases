@@ -33,6 +33,7 @@ alias images='sxiv -tf ~/media/photos/100andro/'
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias i3conf='nvim ~/.config/i3/config'
 alias pconf='nvim ~/.config/polybar/config'
+alias lfconf='nvim ~/.config/lf/lfrc'
 alias rmc='rm *.class'
 alias r='ranger'
 alias zb='cd ~/books && fzf --bind "enter:execute(zathura {}&)"'
@@ -41,6 +42,7 @@ alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
 alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
 alias ascii='nvim ~/downloads/ascii-codes.txt'
 alias date2name='~/downloads/bin/date2name/date2name/date2name.py'
+alias postman='swallow /home/bleart/downloads/bin/PostmanCanary/PostmanCanary'
 
 # volume aliases
 alias am='amixer set Master 100'	# set max
