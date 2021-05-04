@@ -10,18 +10,18 @@ alias ...="cd ../.."
 alias ....="cd ../../..."
 
 # tmp
-alias algo2="nvim ~/ubt/sem3/algo2/kollokviumi1.txt"
-alias xampp="sudo /opt/lampp/manager-linux-x64.run && sudo apachectl stop"
 alias main='javac Main.java && java Main'
-alias sbd="cd ~/ubt/sem3/sbd/projekti"
-alias play="cd ~/Code/playground" # for work!
-alias ch="chromium-browser --disable-web-security --user-data-dir='./downloads/tmp'&"
 
 # ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias lsj='ls | grep .java'
+
+# force swallowing
+alias zathura="swallow zathura"
+alias sxiv="swallow sxiv"
+alias mpv="swallow mpv"
 
 # my aliases
 alias v='nvim'
@@ -32,8 +32,10 @@ alias notes='nvim ~/documents/notes.md'
 alias images='sxiv -tf ~/media/photos/100andro/'
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias i3conf='nvim ~/.config/i3/config'
+alias pconf='nvim ~/.config/polybar/config'
 alias rmc='rm *.class'
 alias r='ranger'
+alias zb='cd ~/books && fzf --bind "enter:execute(zathura {}&)"'
 alias z='fzf --bind "enter:execute(zathura {}&)"'
 alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
 alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
