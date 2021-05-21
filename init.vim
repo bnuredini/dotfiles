@@ -11,6 +11,7 @@ call plug#begin()
     Plug 'flazz/vim-colorschemes'
     Plug 'rakr/vim-one'
     Plug 'vimwiki/vimwiki'
+    Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 syntax on
