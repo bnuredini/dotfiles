@@ -1,4 +1,3 @@
-" plugins
 call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -12,18 +11,22 @@ call plug#begin()
     Plug 'rakr/vim-one'
     Plug 'vimwiki/vimwiki'
     Plug 'leafgarland/typescript-vim'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax on
 filetype plugin indent on
-"set t_Co=256
 colorscheme jellybeans
+"set t_Co=256
 
 set number
 set relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
 set clipboard=unnamed
 set textwidth=88
 set mouse=a
@@ -31,13 +34,15 @@ set mouse=a
 
 " replace 'w' with 'ë' 
 nmap <F2>       :%s/w/ë/g<CR>
+" replace '@' with 'ç' 
 nmap <F3>       :%s/@/ç/g<CR>
-nmap <F4>       :%s/@/w/g<CR>
+" replace '&' with 'w' 
+nmap <F4>       :%s/&/w/g<CR>
+" replace 'W' with 'Ë' 
 nmap <F9>       :%s/W/Ë/g<CR>
-nmap <F7>       :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
 nmap <F8>       :w<CR>:!ls<CR>
 " enable english spellchecker
-map <leader>o   :setlocal spell! spelllang=en_us<CR>
+map <leader>s   :setlocal spell! spelllang=en_us<CR>
 " enabel distraction-free mode
 map <space>f    :Goyo<CR>   
 map <space>F    :Goyo!<CR>
@@ -51,6 +56,9 @@ map <M-2>       2gt<CR>
 map <M-3>       3gt<CR>
 map <M-4>       4gt<CR>
 map <M-5>       5gt<CR>
+" run commands
+autocmd Filetype java nmap <F7>       :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
+autocmd Filetype cs nmap <F7>         :w<CR>:!mcs -out:%:r.exe % && mono %:r.exe<CR>
 
 " java shorthands
 inoremap `psvm<Tab>  public static void main(String[] args) {<CR>}<left><CR><up><Tab>
@@ -70,3 +78,7 @@ autocmd Filetype js setlocal shiftwidth=2
 
 " vimwiki: change wiki directory
 let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
+
+" sudo save the file
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+command! Q execute 'q'
