@@ -1,0 +1,71 @@
+! to reload use xrdb ~/.Xresources
+
+! URxvt.font: xft:monospace:size=12
+URxvt.font: xft:JetBrainsMono-Light:size=12
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,font-size
+!urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+*.foreground:  #dedede
+*.background:  #121212
+*.cursorColor: #ffa560
+!
+! Black
+*.color0:      #929292
+*.color8:      #bdbdbd
+!
+! Red
+*.color1:      #e27373
+*.color9:      #ffa1a1
+!
+! Green
+*.color2:      #94b979
+*.color10:     #bddeab
+!
+! Yellow
+*.color3:      #ffba7b
+*.color11:     #ffdca0
+!
+! Blue
+*.color4:      #97bedc
+*.color12:     #b1d8f6
+!
+! Magenta
+*.color5:      #e1c0fa
+*.color13:     #fbdaff
+!
+! Cyan
+*.color6:      #00988e
+*.color14:     #1ab2a8
+!
+! White
+*.color7:      #dedede
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #ffffff
+!*.colorIT:
+!*.colorUL:
+!
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 0 
+URxvt.cursorBlink: flase
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24 
+URxvt.iso14755: false
