@@ -14,6 +14,7 @@ call plug#begin()
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'craigemery/vim-autotag'
 call plug#end()
 
 syntax on
@@ -59,11 +60,20 @@ map <M-5>       5gt<CR>
 " run commands
 autocmd Filetype java nmap <F7>       :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
 autocmd Filetype cs nmap <F7>         :w<CR>:!mcs -out:%:r.exe % && mono %:r.exe<CR>
+autocmd Filetype c nmap <F7>          :w<CR>:!gcc % && ./a.out<CR>
+autocmd Filetype tex nmap <F7>        :w<CR>:!pdflatex %<CR>
 
 " java shorthands
 inoremap `psvm<Tab>  public static void main(String[] args) {<CR>}<left><CR><up><Tab>
 inoremap `sout<Tab>  System.out.println("");<left><left><left>
 inoremap `pc<Tab>    public class {<CR>}<left><CR><up><up><Esc>eea<right>
+
+"" sql snippets
+autocmd Filetype sql inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+autocmd Filetype sql inoremap `ct<Tab>      CREATE TABLE <++> (<CR><++><CR>);<CR><CR><++>
+autocmd Filetype sql inoremap `cti<Tab>     CREATE TABLE <++> (<CR>id INT NOT NULL PRIMARY KEY,<CR><++><CR>);<CR><CR><++>
+autocmd Filetype sql inoremap `ctfk<Tab>    CREATE TABLE <++> (<CR>id INT NOT NULL PRIMARY KEY,<CR>FOREIGN KEY (fk) REFERENCES some_table(fk)<CR><++><CR>);<CR><CR><++>
+autocmd Filetype sql inoremap `fk<Tab>      FOREIGN KEY (<++>) REFERENCES <++>(<++>)
 
 " file specific
 autocmd Filetype html setlocal tabstop=2
@@ -79,6 +89,10 @@ autocmd Filetype js setlocal shiftwidth=2
 " vimwiki: change wiki directory
 let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
 
+" vimwiki: use markdown
+" let g:vimwiki_list = [{'path': '~/vimwiki/',
+"                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " sudo save the file
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+command! W execute 'w'
 command! Q execute 'q'
