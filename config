@@ -1,4 +1,55 @@
-for_window [class="^.*"] border pixel 2 
+# === GAPS ===
+gaps inner 0 
+gaps outer 0 
+bindsym $mod+z			    gaps outer current plus 5 
+bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $mod+Shift+d		gaps inner current set 0;  gaps outer current set 0
+bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
+
+
+# === STARTUP ===
+# set pape
+# exec feh --bg-scale ~/media/images/wallpapers/wallpaper.jpg
+exec nitrogen --restore &
+
+# setup monitor
+exec_always --no-startup-id ~/code/shell/setup_monitor.sh &
+
+# use picom
+exec picom --config ~/.config/picom.conf
+
+# swallow
+exec --no-startup-id python3 ~/.config/i3/i3-swallow.py
+
+# better layout
+exec_always  ~/.config/i3/alternating_layouts.py
+
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+# dropbox 
+# exec --no-startup-id dropbox start
+
+
+# === KEY BINDINGS === 
+bindsym $mod+b			exec --no-startup-id /usr/bin/brave-browser
+bindsym $mod+c 			exec --no-startup-id "code"
+bindsym $mod+Shift+c    exec --no-startup-id /usr/bin/calibre
+bindsym $mod+o 			exec urxvt -e "lf"
+bindsym $mod+m			exec urxvt -e "cmus"
+bindsym $mod+Shift+p    exec mypaint 
+bindsym $mod+t			exec thunar
+bindsym $mod+p			exec speedcrunch
+bindsym $mod+g			exec guvcview
+bindsym $mod+Shift+s    exec maim ~/ubt/sem4/etc/evidenca/$(date +%s).png && notify-send "Screenshot taken"
+
+# rofi
+# bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -show-icons -terminal termite -color-window '#ffffff, #ffffff, #ffffff' -color-normal '#ffffff, #aaaaaa, #ffffff, #549c58, #ffffff' -color-active '#ffffff, #aaaaaa, #ffffff, #aa0000, #ffffff' -color-urgent '#ffffff, #aa0000, #ffffff, #aa0000, #ffffff'"
+bindsym $mod+d exec "rofi -show drun -terminal -lines 3 -eh 2 -bw 0 -width 100 -padding 400 -show-icons"
+
+
+# === DEFAULTS ===
+for_window [class="^.*"] border pixel 0 
 
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
@@ -17,7 +68,6 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -130,7 +180,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -162,39 +212,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# gaps
-gaps inner 8 
-gaps outer 8 
-bindsym $mod+z			    gaps outer current plus 5 
-bindsym $mod+Shift+z		gaps outer current minus 5
-bindsym $mod+Shift+d		gaps inner current set 0;  gaps outer current set 0
-bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
-
-# startup
-exec feh    --bg-scale ~/media/images/wallpapers/forrest.jpg    # set pape
-exec picom  --config ~/.config/picom.conf                       # use picom
-exec --no-startup-id python3 ~/.config/i3/i3-swallow.py         # swallow
-exec --no-startup-id ~/.config/i3/alternating_layouts.py        # better layout
-# exec --no-startup-id dropbox start                            # dropbox 
-
-# keys for programs
-bindsym $mod+b			exec --no-startup-id /usr/bin/brave-browser
-bindsym $mod+c 			exec --no-startup-id /usr/bin/calibre
-bindsym $mod+o 			exec urxvt -e "lf"
-bindsym $mod+m			exec urxvt -e "cmus"
-bindsym $mod+Shift+p    exec urxvt -e "sxiv -t /home/bleart/media/photos/100andro"
-bindsym $mod+t			exec thunar
-bindsym $mod+p			exec speedcrunch
-
-# rofi
-bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -show-icons -terminal termite -color-window '#ffffff, #ffffff, #ffffff' -color-normal '#ffffff, #aaaaaa, #ffffff, #549c58, #ffffff' -color-active '#ffffff, #aaaaaa, #ffffff, #aa0000, #ffffff' -color-urgent '#ffffff, #aa0000, #ffffff, #aa0000, #ffffff'"
-
-# polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
-
 # tmp
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.color7 #eeeeee
+set_from_resource $bg i3wm.color2 #eeeeee
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
