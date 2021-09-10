@@ -1,16 +1,25 @@
 # working with directories
 alias d="cd ~/downloads"
 alias b="cd ~/books"
-alias ubt="cd ~/ubt/sem4"
-alias ubtush='cd ~/ubt/sem3/shk2/ushtrimet/ush-tmp/src'
-alias iw="cd /var/www/html/iw"
+alias j="cd ~/code/j/random"
+alias ubt="cd ~/ubt/sem5"
 alias algs4-2="cd ~/code/j/algs4-2/src"
-alias j="cd ~/code/j/randoms"
 alias ...="cd ../.."
 alias ....="cd ../../..."
 
 # tmp
 alias main='javac Main.java && java Main'
+alias build='cd ~/projects/lab1/API && dotnet watch run' 
+alias lab1='cd ~/projects/lab1'
+alias kitty='/home/bleart/.local/kitty.app/bin/kitty'
+alias vw='vim ~/documents/Dropbox/vimwiki/index.wiki'
+alias jodoro='cd ~/projects/jodoro && javac GUI.java && java GUI'
+
+# scripts
+alias setupmonitor='~/code/shell/setup_monitor.sh'
+alias unsetupmonitor='~/code/shell/unsetup_monitor.sh'
+alias rleft='~/code/shell/rotate_left_monitor.sh'
+alias rnormal='~/code/shell/rotate_normal_monitor.sh'
 
 # ls aliases
 alias ll='ls -alF'
@@ -19,30 +28,34 @@ alias l='ls -CF'
 alias lsj='ls | grep .java'
 
 # force swallowing
-alias zathura="swallow zathura"
-alias sxiv="swallow sxiv"
-alias mpv="swallow mpv"
+alias zathura='swallow zathura'
+alias sxiv='swallow sxiv'
+alias mpv='swallow mpv'
+alias postman='swallow /home/bleart/downloads/bin/PostmanCanary/PostmanCanary'
+alias xdg-open="swallow xdg-open"
 
 # my aliases
 alias v='nvim'
 alias vim='nvim'
-alias td='nvim ~/documents/todo.txt'
-alias work='nvim ~/Dropbox/work-todo.txt'
-alias notes='nvim ~/documents/notes.md'
-alias images='sxiv -tf ~/media/photos/100andro/'
-alias vimconf='nvim ~/.config/nvim/init.vim'
+alias td='nvim ~/documents/todo.md'
+alias photos='sxiv -tf ~/media/photos/100andro/'
+alias wa='sxiv -tf ~/media/photos/wa/'
+alias wp='sxiv -tf ~/media/images/wallpapers/'
+alias vw='vim /home/bleart/documents/Dropbox/vimwiki/index.wiki'
+# alias o='xdg-open $(fzf)'
+
+# config files
+alias vconf='nvim ~/.config/nvim/init.vim'
 alias i3conf='nvim ~/.config/i3/config'
 alias pconf='nvim ~/.config/polybar/config'
 alias lfconf='nvim ~/.config/lf/lfrc'
+
 alias rmc='rm *.class'
+alias rmt='rm *.aux *.log *.out'
 alias r='ranger'
-alias zb='cd ~/books && fzf --bind "enter:execute(zathura {}&)"'
-alias z='fzf --bind "enter:execute(zathura {}&)"'
-alias netbeans='/usr/bin/netbeans/bin/./netbeans &'
-alias algoide='sudo /opt/idea-IC-192.7142.36/bin/idea.sh'
-alias ascii='nvim ~/downloads/ascii-codes.txt'
+alias z='fzf --bind "enter:execute(swallow zathura {}&)"'
+alias zb='cd ~/books && fzf --bind "enter:execute(swallow zathura {}&)"'
 alias date2name='~/downloads/bin/date2name/date2name/date2name.py'
-alias postman='swallow /home/bleart/downloads/bin/PostmanCanary/PostmanCanary'
 
 # volume aliases
 alias am='amixer set Master 100'	# set max
