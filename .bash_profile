@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/bin:$HOME/downloads:$PATH";
 export EDITOR="nvim"
 
 # Load the shell dotfiles, and then some:
