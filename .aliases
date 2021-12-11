@@ -9,11 +9,7 @@ alias ....="cd ../../..."
 
 # tmp
 alias main='javac Main.java && java Main'
-alias build='cd ~/projects/lab1/API && dotnet watch run' 
-alias lab1='cd ~/projects/lab1'
-alias kitty='/home/bleart/.local/kitty.app/bin/kitty'
 alias vw='vim ~/documents/Dropbox/vimwiki/index.wiki'
-alias jodoro='cd ~/projects/jodoro && javac GUI.java && java GUI'
 
 # scripts
 alias setupmonitor='~/code/shell/setup_monitor.sh'
