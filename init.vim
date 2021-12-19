@@ -20,6 +20,7 @@ call plug#begin()
     " Plug 'plasticboy/vim-markdown'
     " Plug 'vim-pandoc/vim-pandoc'
     " Plug 'vim-pandoc/vim-pandoc-syntax' 
+    Plug 'lambdalisue/fern.vim'
 call plug#end()
 
 syntax on
@@ -59,6 +60,14 @@ map <space>F    :Goyo!<CR>
 
 " fzf
 map <space>o	:Files<CR>
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+
+" fern
+map <space>b    :Fern .<CR>
+
+" config file
+map <space>c    :e ~/.config/nvim/init.vim<CR>
+map <space>s    :so ~/.config/nvim/init.vim<CR>
 
 " tabs
 map <leader>n   :tabnew<CR>
