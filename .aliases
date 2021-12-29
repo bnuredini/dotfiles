@@ -9,7 +9,8 @@ alias ....="cd ../../..."
 
 # tmp
 alias main='javac Main.java && java Main'
-alias vw='vim ~/documents/Dropbox/vimwiki/index.wiki'
+alias vw='cd ~/Dropbox/vimwiki && vim index.wiki'
+alias work='vim ~/Dropbox/work.md'
 
 # scripts
 alias setupmonitor='~/code/shell/setup_monitor.sh'
@@ -37,7 +38,6 @@ alias td='nvim ~/documents/todo.md'
 alias photos='sxiv -tf ~/media/photos/100andro/'
 alias wa='sxiv -tf ~/media/photos/wa/'
 alias wp='sxiv -tf ~/media/images/wallpapers/'
-alias vw='vim /home/bleart/documents/Dropbox/vimwiki/index.wiki'
 # alias o='xdg-open $(fzf)'
 
 # config files
@@ -58,3 +58,9 @@ alias am='amixer set Master 100'	# set max
 alias ah='amixer set Master 50'		# set medium
 alias a0='amixer set Master 0'		# set zero
 alias vm='pactl set-sink-volume @DEFAULT_SINK@ 150%'
+
+# tmux
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
