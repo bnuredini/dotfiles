@@ -91,7 +91,8 @@ autocmd Filetype sql inoremap `fk<Tab>      FOREIGN KEY (<++>) REFERENCES <++>(<
 
 " timestamp
 nnoremap <C-t><C-s> m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>
-nnoremap <Space>t a\section*{<C-R>=strftime('%Y-%m-%d')<CR>}
+autocmd Filetype tex nnoremap <Space>t a\section*{<C-R>=strftime('%Y-%m-%d')<CR>}
+nnoremap <Space>t a### <C-R>=strftime('%Y-%m-%d')<CR>
 
 " == OPTIONS == 
 " file specific
