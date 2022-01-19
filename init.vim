@@ -114,9 +114,6 @@ autocmd Filetype js setlocal tabstop=2
 autocmd Filetype js setlocal shiftwidth=2
 autocmd Filetype tex setlocal textwidth=80
 
-" vimwiki: change wiki directory
-let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
-
 " vimwiki: use markdown
 " let g:vimwiki_list = [{'path': '~/vimwiki/',
 "                      \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -130,3 +127,15 @@ autocmd BufNewFile,BufRead *.wiki set filetype=vimwiki
 " sudo save the file
 command! W execute 'w'
 command! Q execute 'q'
+
+if !exists("g:os")
+   let g:os = substitute(system('uname'), '\n', '', '')
+endif
+
+" vimwiki: change wiki directory
+if g:os == "Darwin"
+    let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+else
+    let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
+endif
+
