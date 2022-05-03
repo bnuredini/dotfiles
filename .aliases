@@ -61,6 +61,6 @@ alias vm='pactl set-sink-volume @DEFAULT_SINK@ 150%'
 
 # tmux
 alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new -t"
+alias ta="tmux attach -t"
+alias tls="tmux ls"
+alias tn="tmux new -t"
