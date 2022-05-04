@@ -102,6 +102,10 @@ autocmd Filetype sql inoremap `fk<Tab>      FOREIGN KEY (<++>) REFERENCES <++>(<
 nnoremap <C-t><C-s> m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>
 nnoremap <Space>t a\section*{<C-R>=strftime('%Y-%m-%d')<CR>}
 
+" splits
+nnoremap sv :vsplit<CR>
+nnoremap sh :split<CR>
+
 " == OPTIONS == 
 " file specific
 autocmd Filetype html setlocal tabstop=2
