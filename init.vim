@@ -20,6 +20,7 @@ call plug#begin()
     " Plug 'plasticboy/vim-markdown'
     " Plug 'vim-pandoc/vim-pandoc'
     " Plug 'vim-pandoc/vim-pandoc-syntax' 
+    Plug 'lambdalisue/fern.vim'
 call plug#end()
 
 syntax on
@@ -59,6 +60,14 @@ map <space>F    :Goyo!<CR>
 
 " fzf
 map <space>o	:Files<CR>
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+
+" fern
+map <space>b    :Fern .<CR>
+
+" config file
+map <space>c    :e ~/.config/nvim/init.vim<CR>
+map <space>s    :so ~/.config/nvim/init.vim<CR>
 
 " tabs
 map <leader>n   :tabnew<CR>
@@ -106,9 +115,6 @@ autocmd Filetype js setlocal tabstop=2
 autocmd Filetype js setlocal shiftwidth=2
 autocmd Filetype tex setlocal textwidth=80
 
-" vimwiki: change wiki directory
-let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
-
 " vimwiki: use markdown
 " let g:vimwiki_list = [{'path': '~/vimwiki/',
 "                      \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -122,3 +128,15 @@ autocmd BufNewFile,BufRead *.wiki set filetype=vimwiki
 " sudo save the file
 command! W execute 'w'
 command! Q execute 'q'
+
+if !exists("g:os")
+   let g:os = substitute(system('uname'), '\n', '', '')
+endif
+
+" vimwiki: change wiki directory
+if g:os == "Darwin"
+    let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+else
+    let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
+endif
+
