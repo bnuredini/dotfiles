@@ -4,6 +4,7 @@ alias b="cd ~/books"
 alias j="cd ~/code/j/random"
 alias ubt="cd ~/ubt/sem5"
 alias algs4-2="cd ~/code/j/algs4-2/src"
+alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../..."
 
