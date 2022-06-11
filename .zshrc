@@ -56,12 +56,15 @@ zle-line-init () {
 zle -N zle-line-init
 bindkey -v
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Config for zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=236"
 
 source $HOME/.aliases
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH=$PATH:/usr/local/go/bin:/usr/bleart/code/go/bin/hello
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 _init() {
   vcs_info
