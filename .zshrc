@@ -59,6 +59,7 @@ bindkey -v
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source $HOME/.aliases
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH=$PATH:/usr/local/go/bin:/usr/bleart/code/go/bin/hello
 
