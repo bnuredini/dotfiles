@@ -16,8 +16,8 @@ call plug#begin()
     Plug 'craigemery/vim-autotag'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'lervag/vimtex'
-    " Plug 'godlygeek/tabular'
-    " Plug 'plasticboy/vim-markdown'
+    Plug 'godlygeek/tabular'
+    Plug 'preservim/vim-markdown'
     " Plug 'vim-pandoc/vim-pandoc'
     " Plug 'vim-pandoc/vim-pandoc-syntax' 
     Plug 'lambdalisue/fern.vim'
@@ -100,7 +100,8 @@ autocmd Filetype sql inoremap `fk<Tab>      FOREIGN KEY (<++>) REFERENCES <++>(<
 
 " timestamp
 nnoremap <C-t><C-s> m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>
-nnoremap <Space>t a\section*{<C-R>=strftime('%Y-%m-%d')<CR>}
+autocmd Filetype tex nnoremap <Space>t a\section*{<C-R>=strftime('%Y-%m-%d')<CR>}
+nnoremap <Space>t a### <C-R>=strftime('%Y-%m-%d')<CR>
 
 " splits
 nnoremap sv :vsplit<CR>
@@ -117,6 +118,7 @@ autocmd Filetype php setlocal shiftwidth=2
 autocmd Filetype js setlocal tabstop=2
 autocmd Filetype js setlocal shiftwidth=2
 autocmd Filetype tex setlocal textwidth=80
+autocmd Filetype markdown set cursorline
 
 " vimwiki: use markdown
 " let g:vimwiki_list = [{'path': '~/vimwiki/',
@@ -143,3 +145,14 @@ else
     let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
 endif
 
+let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_follow_anchor = 1
+
+let g:goyo_width = 90
