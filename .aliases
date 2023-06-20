@@ -1,17 +1,25 @@
 # working with directories
 alias d="cd ~/downloads"
 alias b="cd ~/books"
-alias j="cd ~/code/j/random"
+alias j="cd ~/code/java/random"
 alias ubt="cd ~/ubt/sem5"
 alias algs4-2="cd ~/code/j/algs4-2/src"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../..."
+alias agent="cd ~/code/work/automation-agent"
+alias agency="cd ~/code/work/agent-service"
+alias team="cd ~/code/work/cloud-team"
+alias 1fe="cd ~/code/work/ems-frontend"
+alias ds="cd ~/code/work/development-setup/files/docker/"
+alias emstart="/Users/b.nuredinicelonis.com/Code/work/development-setup/files/docker/start-env.sh -c start-all"
+alias emstop="/Users/b.nuredinicelonis.com/Code/work/development-setup/files/docker/start-env.sh -c stop-all"
 
 # tmp
 alias main='javac Main.java && java Main'
-alias vw='cd ~/Dropbox/vimwiki && vim index.wiki'
-alias work='vim ~/Dropbox/work.md'
+alias vw='cd ~/Documents/vimwiki && vim index.wiki'
+alias work='vim ~/Documents/work.md'
+alias code="codium"
 
 # scripts
 alias setupmonitor='~/code/shell/setup_monitor.sh'
