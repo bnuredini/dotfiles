@@ -3,24 +3,16 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-sensible'
     Plug 'junegunn/goyo.vim'
-    Plug 'mattn/emmet-vim'
     Plug 'godlygeek/csapprox'
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'flazz/vim-colorschemes'
-    Plug 'rakr/vim-one'
+    " Plug 'vim-airline/vim-airline-themes'
     Plug 'vimwiki/vimwiki'
     Plug 'leafgarland/typescript-vim'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
-    Plug 'craigemery/vim-autotag'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'lervag/vimtex'
-    Plug 'godlygeek/tabular'
     Plug 'preservim/vim-markdown'
-    " Plug 'vim-pandoc/vim-pandoc'
-    " Plug 'vim-pandoc/vim-pandoc-syntax' 
     Plug 'lambdalisue/fern.vim'
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 syntax on
@@ -54,6 +46,11 @@ nmap <F9>       :%s/W/Ë/g<CR>
 " enable english spellchecker
 map <leader>s   :setlocal spell! spelllang=en_us<CR>
 
+" backtick is used by tmux
+nmap ~~         i` 
+
+nmap <space>w   ysiw`
+
 " enabel distraction-free mode
 map <space>f    :Goyo<CR>   
 map <space>F    :Goyo!<CR>
@@ -61,6 +58,8 @@ map <space>F    :Goyo!<CR>
 " fzf
 map <space>o	:Files<CR>
 nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+
+map <space>m    :MarkdownPreview<CR>
 
 " fern
 map <space>b    :Fern .<CR>
@@ -80,6 +79,7 @@ map <M-5>       5gt<CR>
 
 " run commands
 autocmd Filetype java nmap <F7>       :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
+autocmd Filetype sh nmap <F7>         :w<CR>!./%<CR>
 autocmd Filetype cs nmap <F7>         :w<CR>:!mcs -out:%:r.exe % && mono %:r.exe<CR>
 autocmd Filetype c nmap <F7>          :w<CR>:!gcc % && ./a.out<CR>
 autocmd Filetype tex nmap <F7>        :w<CR>:!cd %:p:h && pdflatex %:p<CR>
@@ -109,8 +109,8 @@ nnoremap sh :split<CR>
 
 " == OPTIONS == 
 " file specific
-autocmd Filetype html setlocal tabstop=2
-autocmd Filetype html setlocal shiftwidth=2
+" autocmd Filetype html setlocal tabstop=2
+" autocmd Filetype html setlocal shiftwidth=2
 autocmd Filetype css setlocal tabstop=2
 autocmd Filetype css setlocal shiftwidth=2
 autocmd Filetype php setlocal tabstop=2
@@ -145,14 +145,29 @@ else
     let g:vimwiki_list = [{'path': '~/documents/Dropbox/vimwiki'}]
 endif
 
-let g:vim_markdown_conceal = 2
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_math = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_edit_url_in = 'tab'
-let g:vim_markdown_follow_anchor = 1
+" let g:vim_markdown_conceal = 2
+" let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_markdown_math = 1
+" let g:vim_markdown_toml_frontmatter = 1
+" let g:vim_markdown_frontmatter = 1
+" let g:vim_markdown_strikethrough = 1
+" let g:vim_markdown_autowrite = 1
+" let g:vim_markdown_edit_url_in = 'tab'
+" let g:vim_markdown_follow_anchor = 1
 
 let g:goyo_width = 90
+
+let g:loaded_matchparen        = 1
+let g:loaded_matchit           = 1
+let g:loaded_logiPat           = 1
+let g:loaded_rrhelper          = 1
+let g:loaded_tarPlugin         = 1
+let g:loaded_gzip              = 1
+let g:loaded_zipPlugin         = 1
+let g:loaded_2html_plugin      = 1
+let g:loaded_shada_plugin      = 1
+let g:loaded_spellfile_plugin  = 1
+let g:loaded_netrw             = 1
+let g:loaded_netrwPlugin       = 1
+let g:loaded_tutor_mode_plugin = 1
+let g:loaded_remote_plugins    = 1
