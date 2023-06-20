@@ -35,18 +35,20 @@ alias lsj='ls | grep .java'
 
 # force swallowing
 alias zathura='swallow zathura'
-alias sxiv='swallow sxiv'
+# alias sxiv='swallow sxiv'
 alias mpv='swallow mpv'
 alias postman='swallow /home/bleart/downloads/bin/PostmanCanary/PostmanCanary'
 alias xdg-open="swallow xdg-open"
 
 # my aliases
 alias v='nvim'
+alias vf='nvim $(fzf)'
 alias vim='nvim'
 alias td='nvim ~/documents/todo.md'
 alias photos='sxiv -tf ~/media/photos/100andro/'
 alias wa='sxiv -tf ~/media/photos/wa/'
 alias wp='sxiv -tf ~/media/images/wallpapers/'
+alias jodoro='java -cp ~/Projects/jodoro/target/classes outer.space.jodoro.GUI&'
 # alias o='xdg-open $(fzf)'
 
 # config files
@@ -56,6 +58,7 @@ alias pconf='nvim ~/.config/polybar/config'
 alias lfconf='nvim ~/.config/lf/lfrc'
 
 alias rmc='rm *.class'
+alias rmo='rm -rf *.out*'
 alias rmt='rm *.aux *.log *.out'
 alias r='ranger'
 alias z='fzf --bind "enter:execute(swallow zathura {}&)"'
