@@ -10,3 +10,5 @@ ln -sfv ~/.dotfiles/.bash_prompt ~/.bash_prompt
 ln -sfv ~/.dotfiles/.aliases ~/.aliases
 ln -sfv ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 ln -sfv ~/.dotfiles/.zshrc ~/.zshrc
+ln -sfv ~/.dotfiles/.zshrc ~/.zshrc
+ln -sfv ~/.dotfiles/.tmux.conf ~/.tmux.conf
