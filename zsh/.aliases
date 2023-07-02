@@ -52,7 +52,7 @@ alias jodoro='java -cp ~/Projects/jodoro/target/classes outer.space.jodoro.GUI&'
 # alias o='xdg-open $(fzf)'
 
 # config files
-alias vconf='nvim ~/.config/nvim/init.vim'
+alias vconf='cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua'
 alias i3conf='nvim ~/.config/i3/config'
 alias pconf='nvim ~/.config/polybar/config'
 alias lfconf='nvim ~/.config/lf/lfrc'
