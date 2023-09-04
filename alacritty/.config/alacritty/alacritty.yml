@@ -1,0 +1,8 @@
+font:
+  size: 14
+
+window:
+ dimensions:
+   columns: 140
+   lines: 60
+
