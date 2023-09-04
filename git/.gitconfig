@@ -4,8 +4,11 @@
 [core]
 	editor = nvim
 	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[interactive]
+	diffFilter = diff-so-fancy --patch
