@@ -31,14 +31,17 @@ vim.keymap.set("n", "<F3>", ":%s/@/ç/g<CR>")
 vim.keymap.set("n", "<F4>", ":%s/&/w/g<CR>")
 vim.keymap.set("n", "<F9>", ":%s/W/Ë/g<CR>")
 vim.keymap.set("n", "<F10>", ":w<CR>:VimwikiAll2HTML<CR>")
+vim.keymap.set("n", "<F7>" ,":!./%<CR>")
 
 vim.keymap.set("n", "<leader>f", vim.cmd.Goyo)
 vim.keymap.set("n", "<leader>n", vim.cmd.tabnew)
 vim.keymap.set("n", "<leader>w", vim.cmd.tabclose)
 vim.keymap.set("n", "<leader>b", ":Fern .<CR>")
+-- vim.keymap.set("n", "<leader>c", "ysiw`");
 
 vim.keymap.set("n", "<leader>ts", "m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>")
 vim.keymap.set("n", "<leader>td", "a### <C-R>=strftime('%Y-%m-%d')<CR>")
+vim.keymap.set("n", "~", "i`")
 
 vim.cmd([[
     autocmd FileType javascript setlocal tabstop=2
@@ -66,5 +69,9 @@ vim.cmd([[
 
 vim.cmd([[
   autocmd Filetype sh nmap <F7>:w<CR>!./%<CR>
+]])
+
+vim.cmd([[
+  autocmd Filetype javascript nmap <F7> :w<CR>:!node %<CR>
 ]])
 
