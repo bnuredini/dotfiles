@@ -56,20 +56,25 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
 source $HOME/.aliases
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin:/usr/local/go/bin:/.local/bin
-export EDITOR="nvim"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 source /opt/homebrew/opt/spaceship/spaceship.zsh
 
+export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin::$HOME/.local/go/bin:/.local/bin
+export GOPATH="$HOME/.local/go"
+export EDITOR="nvim"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export DOCKER_HOST=unix:///Users/$USER/Library/Containers/com.docker.docker/Data/docker.raw.sock
+export SECURITY_JWT_SECRET=my-super-secret-key
+
 
