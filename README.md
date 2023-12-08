@@ -1,7 +1,8 @@
 # dotfiles
 Config files for vim, bash, and i3.
 
-### Using `stow`
+## Using `stow`
+
 To create symbolic links using `stow`, do the following:
 
 ```bash
