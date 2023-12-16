@@ -75,3 +75,6 @@ vim.cmd([[
   autocmd Filetype javascript nmap <F7> :w<CR>:!node %<CR>
 ]])
 
+
+vim.keymap.set("n", "<leader>[", ":bp<CR>")
+vim.keymap.set("n", "<leader>]", ":bn<CR>")
