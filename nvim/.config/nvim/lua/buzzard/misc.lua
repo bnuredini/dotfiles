@@ -28,3 +28,4 @@ vim.api.nvim_set_option('directory', backup_dir)
 vim.api.nvim_set_option('backupdir', backup_dir)
 
 vim.cmd("let g:vimwiki_list = [{'path': '/Users/bleart/Documents/vimwiki'}]")
+vim.cmd("let g:vimwiki_url_maxsave=0")
