@@ -47,5 +47,8 @@ vim.cmd([[
 
     autocmd Filetype php setlocal tabstop=2
     autocmd Filetype php setlocal shiftwidth=2
+
+    autocmd Filetype tmpl setlocal tabstop=2
+    autocmd Filetype tmpl setlocal shiftwidth=2
 ]])
 
