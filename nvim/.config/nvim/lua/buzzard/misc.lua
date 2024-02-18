@@ -29,3 +29,23 @@ vim.api.nvim_set_option('backupdir', backup_dir)
 
 vim.cmd("let g:vimwiki_list = [{'path': '/Users/bleart/Documents/vimwiki'}]")
 vim.cmd("let g:vimwiki_url_maxsave=0")
+
+vim.cmd(":hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white")
+vim.cmd(":nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>")
+
+vim.cmd([[
+    autocmd FileType javascript setlocal tabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2
+    autocmd FileType javascript setlocal softtabstop=2
+
+    autocmd FileType typescript setlocal tabstop=2
+    autocmd FileType typescript setlocal shiftwidth=2
+    autocmd FileType typescript setlocal softtabstop=2
+
+    autocmd Filetype css setlocal tabstop=2
+    autocmd Filetype css setlocal shiftwidth=2
+
+    autocmd Filetype php setlocal tabstop=2
+    autocmd Filetype php setlocal shiftwidth=2
+]])
+

@@ -44,22 +44,6 @@ vim.keymap.set("n", "<leader>td", "a### <C-R>=strftime('%Y-%m-%d')<CR>")
 vim.keymap.set("n", "~", "i`")
 
 vim.cmd([[
-    autocmd FileType javascript setlocal tabstop=2
-    autocmd FileType javascript setlocal shiftwidth=2
-    autocmd FileType javascript setlocal softtabstop=2
-
-    autocmd FileType typescript setlocal tabstop=2
-    autocmd FileType typescript setlocal shiftwidth=2
-    autocmd FileType typescript setlocal softtabstop=2
-
-    autocmd Filetype css setlocal tabstop=2
-    autocmd Filetype css setlocal shiftwidth=2
-
-    autocmd Filetype php setlocal tabstop=2
-    autocmd Filetype php setlocal shiftwidth=2
-]])
-
-vim.cmd([[
   autocmd FileType java nmap <F7> :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
 ]])
 
@@ -75,6 +59,10 @@ vim.cmd([[
   autocmd Filetype javascript nmap <F7> :w<CR>:!node %<CR>
 ]])
 
+vim.cmd([[
+    autocmd Filetype python nmap <F7> :w<CR>:!python3 %<CR>
+]])
 
 vim.keymap.set("n", "<leader>[", ":bp<CR>")
 vim.keymap.set("n", "<leader>]", ":bn<CR>")
+
