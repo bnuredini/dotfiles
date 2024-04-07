@@ -22,6 +22,7 @@ alias main='javac Main.java && java Main'
 alias vw='cd ~/Documents/vimwiki && vim index.wiki'
 alias work='vim ~/Documents/work.md'
 alias code="codium"
+alias p="python3"
 
 # scripts
 alias setupmonitor='~/code/shell/setup_monitor.sh'
