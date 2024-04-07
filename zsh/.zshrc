@@ -62,18 +62,20 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U promptinit; promptinit
 source /opt/homebrew/opt/spaceship/spaceship.zsh
 
-export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin::$HOME/.local/go/bin:/.local/bin
+export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin:$HOME/.local/go/bin:/.local/bin
 export GOPATH="$HOME/.local/go"
 export EDITOR="nvim"
 export DOCKER_HOST=unix:///Users/$USER/Library/Containers/com.docker.docker/Data/docker.raw.sock
-export SECURITY_JWT_SECRET=my-super-secret-key
+export SECURITY_JWT_SECRET=my-new-super-secret-key
 export HOMEBREW_PREFIX=/opt/homebrew
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
