@@ -12,14 +12,12 @@ vim.opt.wrap = false
 vim.opt.hlsearch = false -- don't hightlight searches
 vim.opt.incsearch = true  -- incremental search
 
-vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 
 vim.opt.colorcolumn = "100"
 vim.opt.textwidth = 100
 
-vim.cmd('colorscheme jellybeans')
+vim.opt.termguicolors = true
 
 local vim_cstmztn_files_dir = vim.fn.expand('~/.vim_swp')
 local backup_dir = vim_cstmztn_files_dir .. '/vim_backup'
@@ -31,7 +29,6 @@ vim.cmd("let g:vimwiki_list = [{'path': '/Users/bleart/Documents/vimwiki'}]")
 vim.cmd("let g:vimwiki_url_maxsave=0")
 
 vim.cmd(":hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white")
-vim.cmd(":nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>")
 
 vim.cmd([[
     autocmd FileType javascript setlocal tabstop=2
