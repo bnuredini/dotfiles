@@ -140,6 +140,7 @@ require('lazy').setup {
         lua = { 'stylua' },
         javascript = { { 'prettierd', 'prettier' } },
         html = { 'prettier' },
+        go = { 'gofumpt' },
       },
     },
   },
