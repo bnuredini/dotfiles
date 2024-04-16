@@ -1,13 +1,19 @@
 # dotfiles
-Config files for vim, bash, and i3.
+ 
+Config files for vim, bash, i3, etc.
 
 ## Using `stow`
 
-To create symbolic links using `stow`, do the following:
+To create symbolic links using `stow`, run
 
 ```bash
 stow <application_name>
 ```
 
-So, for something like Neovim you would have to run `stow nvim`. To pick up all configs, use `stow
-*`.
+So, to create symlinks for something like Neovim you would have to run `stow nvim`. To pick up all
+configs, use 
+
+```bash
+stow *
+```
+
