@@ -33,7 +33,7 @@ vim.keymap.set('n', '<F9>', ':%s/W/Ë/g<CR>')
 vim.keymap.set('n', '<F10>', ':w<CR>:VimwikiAll2HTML<CR>')
 vim.keymap.set('n', '<F7>', ':!./%<CR>')
 
-vim.keymap.set('n', '<leader>f', vim.cmd.Goyo)
+vim.keymap.set('n', '<leader>x', vim.cmd.Goyo)
 vim.keymap.set('n', '<leader>n', vim.cmd.tabnew)
 vim.keymap.set('n', '<leader>w', vim.cmd.tabclose)
 vim.keymap.set('n', '<leader>b', ':Neotree .<CR>')
