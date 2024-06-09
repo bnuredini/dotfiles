@@ -27,7 +27,7 @@ vim.api.nvim_set_option('backupdir', backup_dir)
 
 vim.cmd "let g:vimwiki_list = [{'path': '/Users/bleart/Documents/vimwiki'}]"
 vim.cmd 'let g:vimwiki_url_maxsave=0'
-vim.cmd 'let g:goyo_width=100'
+vim.cmd 'let g:goyo_width=102'
 
 vim.cmd ':hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white'
 
