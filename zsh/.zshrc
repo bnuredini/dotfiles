@@ -60,7 +60,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
-source /opt/homebrew/opt/spaceship/spaceship.zsh
+# source /opt/homebrew/opt/spaceship/spaceship.zsh
 
 export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin:$HOME/.local/go/bin:/.local/bin
 export GOPATH="$HOME/.local/go"
@@ -80,3 +80,5 @@ export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+eval "$(starship init zsh)"
