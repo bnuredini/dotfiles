@@ -17,6 +17,7 @@ require('lazy').setup {
   'tpope/vim-commentary',
   'tpope/vim-surround',
   'vimwiki/vimwiki',
+  'junegunn/limelight.vim',
   'junegunn/goyo.vim',
   {
     'nvim-neo-tree/neo-tree.nvim',
