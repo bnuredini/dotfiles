@@ -62,10 +62,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U promptinit; promptinit
 # source /opt/homebrew/opt/spaceship/spaceship.zsh
 
-export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin:$HOME/.local/go/bin:/.local/bin
+export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin:$HOME/.local/go/bin:/var/lib/flatpak/exports/bin
 export GOPATH="$HOME/.local/go"
 export EDITOR="nvim"
-# export DOCKER_HOST=unix:///Users/$USER/Library/Containers/com.docker.docker/Data/docker.raw.sock
 export SECURITY_JWT_SECRET=my-new-super-secret-key
 export SECURITY_JWT_HMACKEYS=my-new-super-secret-key,my-super-secret-key
 export HOMEBREW_PREFIX=/opt/homebrew
@@ -82,3 +81,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval "$(starship init zsh)"
+
