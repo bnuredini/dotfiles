@@ -1,3 +1,4 @@
 packer_compiled.lua
 tmux/.config/tmux/plugins/
 nvim/.config/nvim/spell/
+lazy-lock.json
