@@ -1,52 +1,59 @@
-# == GAPS ==
-gaps inner 0
-gaps outer 0
-bindsym $mod+z			    gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
-bindsym $mod+Shift+d		gaps inner current set 0;  gaps outer current set 0
-bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
+# ==== STARTUP =====================================================================================
 
-# == STARTUP ==
 # set pape
 exec nitrogen --restore &
 
 # setup monitor
 exec_always --no-startup-id ~/code/shell/setup_monitor.sh &
-
-# use picom
 exec picom --config ~/.config/picom.conf
-
-# swallow
-exec --no-startup-id python3 ~/.config/i3/i3-swallow.py
 
 # better layout
 exec_always  ~/.config/i3/alternating_layouts.py
 
-# polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+# exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# == KEY BINDINGS == 
-bindsym $mod+b			exec --no-startup-id /usr/bin/brave-browser
-bindsym $mod+c 			exec --no-startup-id "code"
-bindsym $mod+Shift+c    exec --no-startup-id /usr/bin/calibre
-bindsym $mod+d          exec "rofi -show drun -show-icons -lines 3 -theme ~/.config/rofi/rofi-themes/slate.rasi"
-# bindsym $mod+o 			exec urxvt -e "xdg-open \"$(fzf)\""
-bindsym $mod+o 			exec urxvt -e lf
-# bindsym $mod+m			exec urxvt -e "cmus"
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+
+# ==== END OF STARTUP ==============================================================================
+
+
+# ==== APP KEY BINDINGS ============================================================================
+
+bindsym $mod+Return     exec wezterm
+bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
 bindsym $mod+m			exec audacious
 bindsym $mod+p			exec speedcrunch
 bindsym $mod+Shift+p    exec mypaint 
 bindsym $mod+t			exec thunar
 bindsym $mod+g			exec guvcview
 bindsym $mod+Shift+s    exec maim ~/media/images/screeshots/$(date +%s).png && notify-send "Screenshot taken"
-bindsym $mod+Shift+m    exec amixer set Master 0
-bindsym $mod+i          exec amixer set Master 10%+ 
-bindsym $mod+Shift+i    exec amixer set Master 10%- 
 bindsym $mod+Shift+a    exec "~/.config/rofi/rofi-scripts/monitor_layout.sh" 
-bindsym $mod+Shift+x    exec betterlockscreen -l
+bindcode $mod+40        exec "rofi -modi drun,run -show drun -show-icons"
 
-# == DEFAULTS ==
-for_window [class="^.*"] border pixel 0 
+# ==== END OF APP KEY BINDINGS =====================================================================
+
+
+# ==== SOUND KEY BINDINGS ==========================================================================
+
+bindsym $mod+Shift+m    exec amixer -c 1 -- sset Master playback 0
+bindsym $mod+i          exec amixer -c 1 -- sset Master playback 10%+
+bindsym $mod+Shift+i    exec amixer -c 1 -- sset Master playback 10%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# ==== END OF SOUND KEY BINDINGS ===================================================================
+
+
+# ==== DEFAULTS ====================================================================================
+
+for_window [class="^.*"] border pixel 1 
+font pango:monospace 8
+floating_modifier $mod
 
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
@@ -57,18 +64,8 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend  
 
 bindsym XF86Suspend exec --no-startup-id lockscreen 
-
-# set font
-font pango:monospace 8
-
-# use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec rxvt
-
-# kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+x exec i3lock --color 000000
 
 # change focus (vim style)
 bindsym $mod+h focus left
@@ -76,13 +73,6 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# change focus (default)
-# bindsym $mod+j focus left
-# bindsym $mod+k focus down
-# bindsym $mod+l focus up
-# bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -94,13 +84,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# move focused window (defualt)
-# bindsym $mod+Shift+j move left
-# bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -120,10 +103,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# toggle tiling/floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# change focus between tiling/floating windows
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
@@ -153,41 +136,50 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-# bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+r mode "resize"
 
-# resize window (you can also use the mouse for that)
 mode "resize" {
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-    
-        # same bindings, but for the arrow keys
+        # pressing left will shrink the window’s width
+        # pressing right will grow the window’s width
+        # pressing up will shrink the window’s height
+        # pressing down will grow the window’s height
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+        
+        # same thing; vim style
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+
+# ==== GAPS ========================================================================================
+
+gaps inner 0
+gaps outer 0
+bindsym $mod+z			    gaps outer current plus 5
+bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $mod+Shift+d		gaps inner current set 0;  gaps outer current set 0
+bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
+
+# ==== END OF GAPS =================================================================================
+
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-client.background       $bg
+# client.focused          $bg     $bg     $fg  $bg       $bg
+# client.focused_inactive $bg     $bg     $fg  $bg       $bg
+# client.unfocused        $bg     $bg     $fg  $bg       $bg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
+# client.background       $bg
