@@ -19,7 +19,7 @@ alias cstop="~/Code/ds/files/docker/start-env.sh -c stop-all"
 
 # tmp
 alias main='javac Main.java && java Main'
-alias vw='cd ~/Documents/vimwiki && vim index.wiki'
+alias vw='cd ~/documents/notes && vim index.wiki'
 alias work='vim ~/Documents/work.md'
 alias code="codium"
 alias p="python3"
