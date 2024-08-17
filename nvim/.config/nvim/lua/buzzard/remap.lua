@@ -37,6 +37,7 @@ vim.keymap.set('n', '<leader>x', vim.cmd.Goyo)
 vim.keymap.set('n', '<leader>n', vim.cmd.tabnew)
 vim.keymap.set('n', '<leader>w', vim.cmd.tabclose)
 vim.keymap.set('n', '<leader>b', ':Neotree .<CR>')
+vim.keymap.set('n', '<leader>o', ':Oil .<CR>')
 -- vim.keymap.set("n", "<leader>c", "ysiw`");
 vim.keymap.set('n', '<leader>c', ':set cursorline! cursorcolumn!<CR>')
 
