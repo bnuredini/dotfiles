@@ -1,18 +1,8 @@
 # ==== STARTUP =====================================================================================
 
-# set pape
-exec nitrogen --restore &
-
-# setup monitor
-exec_always --no-startup-id ~/code/shell/setup_monitor.sh &
-exec picom --config ~/.config/picom.conf
-
-# better layout
-exec_always  ~/.config/i3/alternating_layouts.py
-
-# exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -22,7 +12,7 @@ exec --no-startup-id nm-applet
 
 # ==== APP KEY BINDINGS ============================================================================
 
-bindsym $mod+Return     exec wezterm
+bindsym $mod+Return     exec --no-startup-id wezterm
 bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
 bindsym $mod+m			exec audacious
 bindsym $mod+p			exec speedcrunch
@@ -38,13 +28,13 @@ bindcode $mod+40        exec "rofi -modi drun,run -show drun -show-icons"
 
 # ==== SOUND KEY BINDINGS ==========================================================================
 
-bindsym $mod+Shift+m    exec amixer -c 1 -- sset Master playback 0
-bindsym $mod+i          exec amixer -c 1 -- sset Master playback 10%+
-bindsym $mod+Shift+i    exec amixer -c 1 -- sset Master playback 10%-
+bindsym $mod+Shift+m         exec amixer -c 1 -- sset Master playback 0
+bindsym $mod+i               exec amixer -c 1 -- sset Master playback 10%+
+bindsym $mod+Shift+i         exec amixer -c 1 -- sset Master playback 10%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # ==== END OF SOUND KEY BINDINGS ===================================================================
 
@@ -176,6 +166,8 @@ bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
 # ==== END OF GAPS =================================================================================
 
 
+# ==== COLORS ======================================================================================
+
 # class                 border  backgr. text indicator child_border
 # client.focused          $bg     $bg     $fg  $bg       $bg
 # client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -183,3 +175,6 @@ bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
 # client.urgent           $bg     $bg     $fg  $bg       $bg
 # client.placeholder      $bg     $bg     $fg  $bg       $bg
 # client.background       $bg
+
+# ==== END OF COLORS ===============================================================================
+
