@@ -58,11 +58,15 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
-# source /opt/homebrew/opt/spaceship/spaceship.zsh
 
-export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/opt/postgresql@13/bin:$HOME/.local/go/bin:/var/lib/flatpak/exports/bin
+path+=/opt/homebrew/bin
+path+=/opt/homebrew/opt/postgresql@13/bin
+path+=/usr/local/go/bin
+path+=$HOME/.local/go/bin
+path+=/var/lib/flatpak/exports/bin
+
+export PATH
 export GOPATH="$HOME/.local/go"
 export EDITOR="nvim"
 export SECURITY_JWT_SECRET=my-new-super-secret-key

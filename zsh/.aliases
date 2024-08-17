@@ -36,13 +36,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lsj='ls | grep .java'
 
-# force swallowing
-alias zathura='swallow zathura'
-# alias sxiv='swallow sxiv'
-alias mpv='swallow mpv'
-alias postman='swallow /home/bleart/downloads/bin/PostmanCanary/PostmanCanary'
-alias xdg-open="swallow xdg-open"
-
 # my aliases
 alias v='nvim'
 alias vf='nvim $(fzf)'
