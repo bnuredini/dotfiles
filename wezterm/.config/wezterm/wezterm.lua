@@ -1,12 +1,12 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+config.font_size = 12.0
+config.window_decorations = "RESIZE"
 config.color_scheme = "Jellybeans"
 config.colors = {
 	background = "#151515",
 }
-
-config.font_size = 9.0
 
 config.keys = {
 	{
