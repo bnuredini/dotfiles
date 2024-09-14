@@ -15,7 +15,7 @@ exec --no-startup-id nm-applet
 bindsym $mod+Return     exec --no-startup-id wezterm
 bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
 bindsym $mod+m			exec audacious
-bindsym $mod+p			exec speedcrunch
+bindsym $mod+p			exec sioyek
 bindsym $mod+Shift+p    exec mypaint 
 bindsym $mod+t			exec thunar
 bindsym $mod+g			exec guvcview
