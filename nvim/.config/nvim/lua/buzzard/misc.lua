@@ -25,7 +25,14 @@ local backup_dir = vim_cstmztn_files_dir .. '/vim_backup'
 vim.api.nvim_set_option('directory', backup_dir)
 vim.api.nvim_set_option('backupdir', backup_dir)
 
-vim.cmd "let g:vimwiki_list = [{'path': '/Users/bleart/Documents/notes', 'path_html': '/Users/bleart/Documents/notes-html'}]"
+local os_name = vim.loop.os_uname().sysname
+
+if os_name == 'Linux' then
+  vim.cmd "let g:vimwiki_list = [{'path': '/home/bleart/documents/notes', 'path_html': '/home/bleart/documents/notes-html'}]"
+elseif os_name == 'Darwin' then
+  vim.cmd "let g:vimwiki_list = [{'path': '/Users/bleart/documents/notes', 'path_html': '/Users/bleart/documents/notes-html'}]"
+end
+
 vim.cmd 'let g:vimwiki_url_maxsave=0'
 vim.cmd 'let g:goyo_width=102'
 
