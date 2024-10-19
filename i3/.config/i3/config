@@ -1,33 +1,39 @@
 # ==== STARTUP =====================================================================================
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-
 # ==== END OF STARTUP ==============================================================================
 
 
 # ==== APP KEY BINDINGS ============================================================================
-
 bindsym $mod+Return     exec --no-startup-id wezterm
 bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
-bindsym $mod+m			exec audacious
-bindsym $mod+p			exec sioyek
-bindsym $mod+Shift+p    exec mypaint 
-bindsym $mod+t			exec thunar
-bindsym $mod+g			exec guvcview
-bindsym $mod+Shift+s    exec maim ~/media/images/screeshots/$(date +%s).png && notify-send "Screenshot taken"
+bindsym $mod+Shift+s    exec maim ~/media/screenshots/$(date +'%Y-%m-%d--%N').png && notify-send "Screenshot taken"
+
+bindsym $mod+o mode "launch"
+mode "launch" {
+    bindsym f exec firefox
+    bindsym t exec thunar
+    bindsym m exec thunderbird
+    bindsym g exec guvcview
+    bindsym p exec sioyek
+    bindsym m exec org.strawberrymusicplayer.strawberry
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+o mode "default"
+}
+
+bindsym $mod+x          exec rofi -show window
 bindsym $mod+Shift+a    exec "~/.config/rofi/rofi-scripts/monitor_layout.sh" 
 bindcode $mod+40        exec "rofi -modi drun,run -show drun -show-icons"
-
 # ==== END OF APP KEY BINDINGS =====================================================================
 
 
 # ==== SOUND KEY BINDINGS ==========================================================================
-
 bindsym $mod+Shift+m         exec amixer -c 1 -- sset Master playback 0
 bindsym $mod+i               exec amixer -c 1 -- sset Master playback 10%+
 bindsym $mod+Shift+i         exec amixer -c 1 -- sset Master playback 10%-
@@ -35,38 +41,61 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # ==== END OF SOUND KEY BINDINGS ===================================================================
 
 
-# ==== DEFAULTS ====================================================================================
+# ==== GAPS ========================================================================================
+gaps inner 0
+gaps outer 0
 
-for_window [class="^.*"] border pixel 1 
+bindsym $mod+g mode "gaps"
+mode "gaps" {
+    bindsym i gaps outer current plus 5; gaps inner current plus 5
+    bindsym d gaps outer current minus 5; gaps inner current minus 5
+    bindsym o gaps inner current set 0;  gaps outer current set 0
+    bindsym f gaps inner current set 15;  gaps outer current set 15
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+# ==== END OF GAPS =================================================================================
+
+
+# ==== DEFAULTS ====================================================================================
+for_window [class="^.*"] border pixel 2
 font pango:monospace 8
 floating_modifier $mod
+# floating_minimum_size 750 x 750
+tiling_drag modifier titlebar
 
-set $term --no-startup-id $TERMINAL
 set $mod Mod4
-set $stoprec --no-startup-id dmenurecord kill
-set $shutdown sudo -A shutdown -h now
-set $reboot sudo -A reboot
+set $term       --no-startup-id $TERMINAL
+set $stoprec    --no-startup-id dmenurecord kill
+set $shutdown   sudo -A shutdown -h now
+set $reboot     sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
-set $hibernate sudo -A systemctl suspend  
+set $hibernate  sudo -A systemctl suspend  
 
-bindsym XF86Suspend exec --no-startup-id lockscreen 
+bindsym XF86Suspend  exec --no-startup-id lockscreen 
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+x exec i3lock --color 000000
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# ==== END OF DEFAULTS =============================================================================
 
+
+# ==== POSITION ====================================================================================
 # change focus (vim style)
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left   focus left
+bindsym $mod+Down   focus down
+bindsym $mod+Up     focus up
+bindsym $mod+Right  focus right
 
 # move focused window (vim style)
 bindsym $mod+Shift+h move left
@@ -74,16 +103,26 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+p mode "position"
+mode "position" {
+    bindsym h move position 0 px 31 px
+    bindsym m move position mouse
+    bindsym c move position center
 
-# split in vertical orientation
-bindsym $mod+V split v
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+p mode "default"
+}
+# ==== END OF POSITION =============================================================================
+
+
+# ==== LAYOUT ======================================================================================
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -126,48 +165,37 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+r mode "resize"
-
 mode "resize" {
-        # pressing left will shrink the window’s width
-        # pressing right will grow the window’s width
-        # pressing up will shrink the window’s height
-        # pressing down will grow the window’s height
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Left  resize shrink width 10 px or 10 ppt
+        bindsym Down  resize grow height 10 px or 10 ppt
+        bindsym Up    resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
         
-        # same thing; vim style
-        bindsym l resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym h resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Shift+Left  resize shrink width 100 px or 100 ppt
+        bindsym Shift+Down  resize grow height 100 px or 100 ppt
+        bindsym Shift+Up    resize shrink height 100 px or 100 ppt
+        bindsym Shift+Right resize grow width 100 px or 100 ppt
+
+        bindsym Shift+h resize shrink width 100 px or 100 ppt
+        bindsym Shift+j resize grow height 100 px or 100 ppt
+        bindsym Shift+k resize shrink height 100 px or 100 ppt
+        bindsym Shift+l resize grow width 100 px or 100 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-
-# ==== GAPS ========================================================================================
-
-gaps inner 0
-gaps outer 0
-bindsym $mod+z			    gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
-bindsym $mod+Shift+d		gaps inner current set 0;  gaps outer current set 0
-bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
-
-# ==== END OF GAPS =================================================================================
+# ==== END OF LAYOUT ===============================================================================
 
 
 # ==== COLORS ======================================================================================
-
 # class                 border  backgr. text indicator child_border
 # client.focused          $bg     $bg     $fg  $bg       $bg
 # client.focused_inactive $bg     $bg     $fg  $bg       $bg
@@ -175,6 +203,4 @@ bindsym $mod+Shift+t		gaps inner current set 15;  gaps outer current set 15
 # client.urgent           $bg     $bg     $fg  $bg       $bg
 # client.placeholder      $bg     $bg     $fg  $bg       $bg
 # client.background       $bg
-
 # ==== END OF COLORS ===============================================================================
-
