@@ -19,30 +19,30 @@ vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
 vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
--- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('n', '<leader>e', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set('n', 'sv', ':vsplit<CR>')
 vim.keymap.set('n', 'sh', ':split<CR>')
-
-vim.keymap.set('n', '\\s', ':setlocal spell! spelllang=en_us<CR>')
 
 vim.keymap.set('n', '<F2>', ':%s/w/ë/g<CR>')
 vim.keymap.set('n', '<F3>', ':%s/@/ç/g<CR>')
 vim.keymap.set('n', '<F4>', ':%s/&/w/g<CR>')
 vim.keymap.set('n', '<F9>', ':%s/W/Ë/g<CR>')
-vim.keymap.set('n', '<F10>', ':w<CR>:VimwikiAll2HTML<CR>')
 vim.keymap.set('n', '<F7>', ':!./%<CR>')
+vim.keymap.set('n', '<F10>', ':w<CR>:VimwikiAll2HTML<CR>')
 
-vim.keymap.set('n', '<leader>x', vim.cmd.Goyo)
 vim.keymap.set('n', '<leader>n', vim.cmd.tabnew)
 vim.keymap.set('n', '<leader>w', vim.cmd.tabclose)
 vim.keymap.set('n', '<leader>b', ':Neotree .<CR>')
-vim.keymap.set('n', '<leader>o', ':Oil .<CR>')
+vim.keymap.set('n', '<leader>o.', ':Oil .<CR>')
+vim.keymap.set('n', '<leader>oh', ':Oil<CR>')
 -- vim.keymap.set("n", "<leader>c", "ysiw`");
-vim.keymap.set('n', '<leader>c', ':set cursorline! cursorcolumn!<CR>')
+vim.keymap.set('n', '<leader>eg', vim.cmd.Goyo)
+vim.keymap.set('n', '<leader>ec', ':set cursorline! cursorcolumn!<CR>')
+vim.keymap.set('n', '<leader>es', ':setlocal spell! spelllang=en_us<CR>')
 
 vim.keymap.set('n', '<leader>ts', "m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>")
-vim.keymap.set('n', '<leader>td', "a### <C-R>=strftime('%Y-%m-%d')<CR>")
+vim.keymap.set('n', '<leader>td', "a# <C-R>=strftime('%Y-%m-%d')<CR>")
 vim.keymap.set('n', '~', 'i`')
 
 vim.cmd [[

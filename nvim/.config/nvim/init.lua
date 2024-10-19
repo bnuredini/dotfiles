@@ -14,11 +14,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
-  'tpope/vim-commentary',
-  'tpope/vim-surround',
   'vimwiki/vimwiki',
   'junegunn/limelight.vim',
   'junegunn/goyo.vim',
+  'tpope/vim-commentary',
+  'tpope/vim-surround',
+  {
+    'tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+    end,
+  },
   {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
@@ -37,21 +43,21 @@ require('lazy').setup {
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
-
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      }
-    end,
+    opts = {
+      spec = {
+        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        { '<leader>d', group = '[D]ocument' },
+        { '<leader>r', group = '[R]ename' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      },
+    },
   },
   { 'folke/neoconf.nvim', cmd = 'Neoconf' },
   'folke/neodev.nvim',
+  'NLKNguyen/papercolor-theme',
   {
     'nanotech/jellybeans.vim',
     init = function()
@@ -95,6 +101,32 @@ require('lazy').setup {
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>st', function()
+        local pickers = require 'telescope.pickers'
+        local dropdown = require('telescope.themes').get_dropdown()
+        local finders = require 'telescope.finders'
+        local sorters = require 'telescope.sorters'
+        local actions = require 'telescope.actions'
+        local action_state = require 'telescope.actions.state'
+
+        local on_enter = function(prompt_bufnr)
+          local selected = action_state.get_selected_entry()
+          local cmd = 'colorscheme ' .. selected[1]
+          vim.cmd(cmd)
+          actions.close(prompt_bufnr)
+        end
+
+        local opts = {
+          finder = finders.new_table { 'PaperColor', 'jellybeans' },
+          sorter = sorters.get_generic_fuzzy_sorter {},
+          attach_mappings = function(prompt_bufnr, map)
+            map('i', '<CR>', on_enter)
+            return true
+          end,
+        }
+        local colors = pickers.new(dropdown, opts)
+        colors:find()
+      end, { desc = '[S]earch [T]hemes' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -477,12 +509,6 @@ require('lazy').setup {
       --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-    end,
-  },
-  {
-    'tpope/vim-fugitive',
-    config = function()
-      vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
     end,
   },
   {
