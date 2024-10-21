@@ -65,7 +65,7 @@ mode "gaps" {
 for_window [class="^.*"] border pixel 2
 font pango:monospace 8
 floating_modifier $mod
-# floating_minimum_size 750 x 750
+floating_minimum_size 755 x 750
 tiling_drag modifier titlebar
 
 set $mod Mod4
