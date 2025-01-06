@@ -2,13 +2,21 @@
 	name = Bleart Nuredini
 	email = nuredini.bleart@gmail.com
 [core]
-	editor = nvim
+    editor = vim
 	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [interactive]
-	diffFilter = diff-so-fancy --patch
+    diffFilter = delta --color-only
+[delta]
+    navigate = true # use n and N to move between diff sections
+    side-by-side = true
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+[merge]
+    conflictstyle = zdiff3
