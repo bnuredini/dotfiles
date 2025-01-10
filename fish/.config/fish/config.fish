@@ -10,6 +10,10 @@ end
 set fish_vi_force_cursor 1
 set fish_greeting
 
+set -Ux GOPATH $HOME/.local/go
+
+fish_add_path $GOPATH/bin
+
 zoxide init fish | source
 
 function opend 
