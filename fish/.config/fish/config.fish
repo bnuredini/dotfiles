@@ -10,6 +10,7 @@ end
 set fish_vi_force_cursor 1
 set fish_greeting
 
+set EDITOR nvim
 set -Ux GOPATH $HOME/.local/go
 
 fish_add_path $GOPATH/bin
