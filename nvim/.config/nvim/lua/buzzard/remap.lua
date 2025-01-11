@@ -40,6 +40,7 @@ vim.keymap.set('n', '<leader>oh', ':Oil<CR>')
 vim.keymap.set('n', '<leader>eg', vim.cmd.Goyo)
 vim.keymap.set('n', '<leader>ec', ':set cursorline! cursorcolumn!<CR>')
 vim.keymap.set('n', '<leader>es', ':setlocal spell! spelllang=en_us<CR>')
+vim.keymap.set('n', '<leader>el', ':Limelight<CR>')
 
 vim.keymap.set('n', '<leader>ts', "m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>")
 vim.keymap.set('n', '<leader>td', "a# <C-R>=strftime('%Y-%m-%d')<CR>")
@@ -67,6 +68,10 @@ vim.cmd [[
 
 vim.cmd [[
     autocmd Filetype go nmap <F7> :w<CR>:!go run %<CR>
+]]
+
+vim.cmd [[
+    autocmd Filetype markdown nmap <F7> :w<CR>:!pandoc -f markdown -t html %:p -o %:p:h/notes-html/%:t:r.html --css ~/code/tmp/styles/pandoc.css --standalone --quiet<CR> 
 ]]
 
 vim.keymap.set('n', '<leader>[', ':bp<CR>')
