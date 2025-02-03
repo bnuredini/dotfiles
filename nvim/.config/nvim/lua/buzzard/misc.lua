@@ -12,8 +12,6 @@ vim.opt.wrap = false
 vim.opt.hlsearch = false -- don't hightlight searches
 vim.opt.incsearch = true -- incremental search
 
-vim.opt.scrolloff = 8
-
 vim.opt.colorcolumn = '100'
 vim.opt.textwidth = 100
 
@@ -61,4 +59,4 @@ vim.cmd ':ab green_check_mark ✅'
 vim.cmd ':ab red_x ❌'
 
 -- Disable the line separator between splits
-vim.cmd("set fillchars+=vert:\\ ")
+vim.cmd 'set fillchars+=vert:\\ '
