@@ -14,6 +14,7 @@ set EDITOR nvim
 set -Ux GOPATH $HOME/.local/go
 
 fish_add_path $GOPATH/bin
+fish_add_path $HOME/code/scripts
 
 zoxide init fish | source
 
@@ -52,7 +53,7 @@ alias lsj='exa | grep .java'
 alias v='nvim'
 alias vf='nvim (fzf)'
 alias vim='nvim'
-alias td='nvim ~/documents/todo.md'
+alias td='cd ~/documents && nvim ~/documents/todo.md'
 alias photos='sxiv -tf ~/media/photos/100andro/'
 alias wp='sxiv -tf ~/media/wallpapers/'
 alias jodoro='java -cp ~/Projects/jodoro/target/classes outer.space.jodoro.GUI&'
