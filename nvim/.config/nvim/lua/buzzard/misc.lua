@@ -60,3 +60,10 @@ vim.cmd ':ab red_x ❌'
 
 -- Disable the line separator between splits
 vim.cmd 'set fillchars+=vert:\\ '
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'vimwiki',
+  callback = function()
+    vim.opt_local.textwidth = 100
+  end,
+})
