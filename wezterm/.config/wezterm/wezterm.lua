@@ -5,19 +5,35 @@ config.font_size = 9.0
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("JetBrains Mono")
 
-local dark_mode = function()
-	config.color_scheme = "Jellybeans"
-	config.colors = {
-		background = "#151515",
-	}
-end
+local dark_color_scheme = "Jellybeans"
+local dark_background = "#151515"
 
-local light_mode = function()
-	config.color_scheme = "AtomOneLight"
-end
+local light_color_scheme = "AtomOneLight"
+local light_background = "#F9F9F9"
 
-dark_mode()
--- light_mode()
+config.color_scheme = dark_color_scheme
+config.colors = {
+	background = dark_background,
+}
+
+wezterm.on("toggle-color-scheme", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	local current_color_scheme = overrides.color_scheme
+
+	if current_color_scheme == light_color_scheme then
+		overrides.color_scheme = dark_color_scheme
+		overrides.colors = {
+			background = dark_background,
+		}
+	else
+		overrides.color_scheme = light_color_scheme
+		overrides.colors = {
+			background = light_background,
+		}
+	end
+
+	window:set_config_overrides(overrides)
+end)
 
 config.keys = {
 	{
@@ -79,6 +95,11 @@ config.keys = {
 		key = "o",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.ActivateLastTab,
+	},
+	{
+		key = "m",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action({ EmitEvent = "toggle-color-scheme" }),
 	},
 }
 
