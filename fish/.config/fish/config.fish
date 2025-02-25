@@ -15,6 +15,7 @@ set -Ux GOPATH $HOME/.local/go
 
 fish_add_path $GOPATH/bin
 fish_add_path $HOME/code/scripts
+fish_add_path $HOME/bin
 
 zoxide init fish | source
 
