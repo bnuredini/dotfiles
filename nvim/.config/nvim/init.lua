@@ -17,6 +17,7 @@ require('lazy').setup {
   'vimwiki/vimwiki',
   'junegunn/goyo.vim',
   'junegunn/limelight.vim',
+  'preservim/nerdcommenter',
   'tpope/vim-commentary',
   'tpope/vim-surround',
   {
@@ -72,12 +73,9 @@ require('lazy').setup {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
-        -- pickers = {}
+        defaults = {
+          file_ignore_patterns = { '%.pdf', '%.epub', '%.ods' },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
