@@ -13,6 +13,10 @@ set fish_greeting
 set EDITOR nvim
 set -Ux GOPATH $HOME/.local/go
 
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
 fish_add_path $GOPATH/bin
 fish_add_path $HOME/code/scripts
 fish_add_path $HOME/bin
@@ -93,4 +97,3 @@ alias gl="git log --graph --all --oneline"
 alias gd="git diff"
 alias gp="git push origin head"
 alias gfp="git push -f origin head"
-
