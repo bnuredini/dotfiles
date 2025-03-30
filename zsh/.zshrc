@@ -21,6 +21,7 @@ bindkey '^[[A'  up-line-or-beginning-search    # Arrow up
 bindkey '^[OA'  up-line-or-beginning-search
 bindkey '^[[B'  down-line-or-beginning-search  # Arrow down
 bindkey '^[OB'  down-line-or-beginning-search
+bindkey '^R' history-incremental-search-backward
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -52,12 +53,9 @@ zle-line-init () {
 zle -N zle-line-init
 bindkey -v
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
-
 source $HOME/.aliases
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 autoload -U promptinit; promptinit
 
@@ -66,6 +64,7 @@ path+=/opt/homebrew/opt/postgresql@13/bin
 path+=/usr/local/go/bin
 path+=$HOME/.local/go/bin
 path+=/var/lib/flatpak/exports/bin
+path+=~/code/scripts
 
 export PATH
 export GOPATH="$HOME/.local/go"
@@ -74,6 +73,8 @@ export SECURITY_JWT_SECRET=my-new-super-secret-key
 export SECURITY_JWT_HMACKEYS=my-new-super-secret-key,my-super-secret-key
 export HOMEBREW_PREFIX=/opt/homebrew
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -81,9 +82,28 @@ export NVM_DIR="$HOME/.nvm"
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval "$(starship init zsh)"
 
+newd() {
+    touch ~/documents/$(date +'%Y-%m-%d').md 
+    echo "# $(date +'%Y-%m-%d')\n\n" >> ~/documents/$(date +'%Y-%m-%d').md
+    nvim ~/documents/$(date +'%Y-%m-%d').md
+}
+
+opend() {
+    nvim ~/documents/$(date +'%Y-%m-%d').md
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+ufetch
+
+source /home/bleart/.config/broot/launcher/bash/br
