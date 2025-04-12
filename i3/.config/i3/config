@@ -10,17 +10,16 @@ exec --no-startup-id nm-applet
 
 # ==== APP KEY BINDINGS ============================================================================
 bindsym $mod+Return     exec --no-startup-id wezterm
-bindsym $mod+b			exec --no-startup-id /usr/bin/firefox
+bindsym $mod+b			exec --no-startup-id flatpak run org.mozilla.firefox
 bindsym $mod+Shift+s    exec maim ~/media/screenshots/$(date +'%Y-%m-%d--%N').png && notify-send "Screenshot taken"
 
 bindsym $mod+o mode "launch"
 mode "launch" {
-    bindsym f exec firefox
+    bindsym f exec flatpak run org.mozilla.firefox
     bindsym t exec thunar
     bindsym m exec thunderbird
     bindsym g exec guvcview
     bindsym p exec sioyek
-    bindsym m exec org.strawberrymusicplayer.strawberry
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -79,10 +78,11 @@ set $hibernate  sudo -A systemctl suspend
 
 bindsym XF86Suspend  exec --no-startup-id lockscreen 
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+x exec i3lock --color 000000
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec i3lock --color 000000
+bindsym $mod+Shift+n exec systemctl suspend
 # ==== END OF DEFAULTS =============================================================================
 
 
@@ -92,11 +92,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-bindsym $mod+Left   focus left
-bindsym $mod+Down   focus down
-bindsym $mod+Up     focus up
-bindsym $mod+Right  focus right
 
 # move focused window (vim style)
 bindsym $mod+Shift+h move left
@@ -125,16 +120,13 @@ mode "position" {
 # ==== LAYOUT ======================================================================================
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling/floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+f fullscreen toggle
+# bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling/floating windows
 bindsym $mod+space focus mode_toggle
@@ -197,11 +189,15 @@ mode "resize" {
 
 
 # ==== COLORS ======================================================================================
+set $bg #065133
+set $fg #ffffff
+
 # class                 border  backgr. text indicator child_border
-# client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused          $bg     $bg     $fg  $bg       $bg
 # client.focused_inactive $bg     $bg     $fg  $bg       $bg
 # client.unfocused        $bg     $bg     $fg  $bg       $bg
 # client.urgent           $bg     $bg     $fg  $bg       $bg
 # client.placeholder      $bg     $bg     $fg  $bg       $bg
 # client.background       $bg
 # ==== END OF COLORS ===============================================================================
+
