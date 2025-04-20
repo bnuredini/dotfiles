@@ -2,3 +2,8 @@ packer_compiled.lua
 tmux/.config/tmux/plugins/
 nvim/.config/nvim/spell/
 lazy-lock.json
+fish_history
+fish/completions/
+fish/fishd.*
+fish/ssh/
+fish/funcs/
