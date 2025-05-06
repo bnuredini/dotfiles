@@ -1,5 +1,14 @@
 require 'buzzard'
 
+vim.keymap.set('n', 'j', function()
+  vim.cmd 'normal! gj'
+  local curr_line = vim.fn.line '.'
+  local last_line = vim.fn.line '$'
+  if curr_line == last_line then
+    vim.cmd 'normal! zz' -- or 'zt' to move it to the top
+  end
+end, { noremap = true })
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system {
