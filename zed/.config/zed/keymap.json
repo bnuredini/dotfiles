@@ -1,0 +1,9 @@
+[
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      // "vs": "pane::SplitVertical"
+      "vs": "pane::SplitLeft"
+    }
+  }
+]
