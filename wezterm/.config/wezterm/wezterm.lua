@@ -101,6 +101,11 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action({ EmitEvent = "toggle-color-scheme" }),
 	},
+	{
+		key = "w",
+		mods = "CTRL",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
 }
 
 return config
