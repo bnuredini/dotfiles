@@ -30,9 +30,9 @@
     "left_padding": 0.2,
     "right_padding": 0.2
   },
-  "current_line_highlight": "gutter",
+  "current_line_highlight": "none",
   "cursor_blink": false,
-  "cursor_shape": "block",
+  "cursor_shape": "bar",
   "scrollbar": {
     "show": "never",
     "cursors": true,
@@ -65,5 +65,16 @@
   "buffer_font_size": 12,
   "file_types": {
     "HTML": ["gohtml"]
+  },
+  "gutter": {
+    "line_numbers": false
+  },
+  "languages": {
+    "HTML": {
+      "tab_size": 2
+    },
+    "CSS": {
+      "tab_size": 2
+    }
   }
 }
