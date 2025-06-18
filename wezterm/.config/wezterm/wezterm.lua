@@ -108,4 +108,57 @@ config.keys = {
 	},
 }
 
+local mux = wezterm.mux
+local window = nil
+
+wezterm.on("gui-startup", function()
+	local tab_data = {
+		{
+			title = "todo",
+			cwd = wezterm.home_dir .. "/documents",
+			args = { "nvim", "todo.md" },
+		},
+		{
+			title = "docs",
+			cwd = wezterm.home_dir .. "/documents",
+			args = { "nvim", "." },
+		},
+		{
+			title = "files",
+			cwd = wezterm.home_dir .. "/code",
+			args = { "yazi" },
+		},
+		{
+			title = "editor",
+			cwd = wezterm.home_dir .. "/code/ns",
+			args = { "nvim", "~/code/ns" },
+		},
+		{
+			title = "runner",
+			cwd = wezterm.home_dir .. "/code/ns",
+			args = { "fish" },
+		},
+	}
+
+	local window = nil
+	local tab
+	for i, tab_config in ipairs(tab_data) do
+		if i == 1 then
+			tab, _, window = mux.spawn_window({
+				cwd = tab_config.cwd,
+				args = tab_config.args,
+			})
+		else
+			tab, _, _ = window:spawn_tab({
+				cwd = tab_config.cwd,
+				args = tab_config.args,
+			})
+		end
+
+		tab:set_title(tab_config.title)
+	end
+end)
+
+config.default_workspace = "ns"
+
 return config
