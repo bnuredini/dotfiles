@@ -61,7 +61,7 @@
   "ui_font_features": {
     "calt": false
   },
-  "ui_font_size": 12,
+  "ui_font_size": 16,
   "buffer_font_size": 12,
   "file_types": {
     "HTML": ["gohtml"]
