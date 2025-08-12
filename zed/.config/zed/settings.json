@@ -70,6 +70,9 @@
     "line_numbers": false
   },
   "languages": {
+    "Go": {
+      "show_edit_predictions": false
+    },
     "HTML": {
       "tab_size": 2
     },
