@@ -1,25 +1,36 @@
-# ==== STARTUP =====================================================================================
+#
+# Startup. 
+#
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-# ==== END OF STARTUP ==============================================================================
 
 
-# ==== APP KEY BINDINGS ============================================================================
-bindsym $mod+Return     exec --no-startup-id wezterm
-bindsym $mod+b			exec --no-startup-id flatpak run org.mozilla.firefox
-bindsym $mod+Shift+s    exec maim ~/media/screenshots/$(date +'%Y-%m-%d--%N').png && notify-send "Screenshot taken"
+
+#
+# Program key bindings.
+#
+
+bindsym $mod+t exec --no-startup-id ~/.config/i3/scripts/focus-or-exec.sh wezterm   wezterm
+bindsym $mod+f exec --no-startup-id ~/.config/i3/scripts/focus-or-exec.sh Dolphin   dolphin
+bindsym $mod+m exec --no-startup-id ~/.config/i3/scripts/focus-or-exec.sh QuodLibet quodlibet
+bindsym $mod+w exec --no-startup-id ~/.config/i3/scripts/focus-or-exec.sh godot     godot
+bindsym $mod+b exec --no-startup-id ~/.config/i3/scripts/focus-or-exec.sh Vivaldi   vivaldi
+bindsym $mod+z exec --no-startup-id ~/.config/i3/scripts/focus-or-exec.sh zed   zed
+
+bindsym $mod+Return exec --no-startup-id wezterm
 
 bindsym $mod+o mode "launch"
 mode "launch" {
-    bindsym f exec flatpak run org.mozilla.firefox
-    bindsym t exec thunar
+    bindsym f exec dolphin
     bindsym m exec thunderbird
     bindsym g exec guvcview
-    bindsym p exec sioyek
+    bindsym p exec flatpak run com.github.ahrm.sioyek
+    bindsym b exec flatpak run org.mozilla.firefox
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -27,12 +38,16 @@ mode "launch" {
 }
 
 bindsym $mod+x          exec rofi -show window
+bindsym $mod+d          exec "rofi -modi drun,run -show drun -show-icons"
 bindsym $mod+Shift+a    exec "~/.config/rofi/rofi-scripts/monitor_layout.sh" 
-bindcode $mod+40        exec "rofi -modi drun,run -show drun -show-icons"
-# ==== END OF APP KEY BINDINGS =====================================================================
+bindsym $mod+Shift+s    exec maim ~/media/screenshots/$(date +'%Y-%m-%d--%N').png && notify-send "Screenshot taken"
 
 
-# ==== SOUND KEY BINDINGS ==========================================================================
+
+#
+# Sound key bindings.
+#
+
 bindsym $mod+Shift+m         exec amixer -c 1 -- sset Master playback 0
 bindsym $mod+i               exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Shift+i         exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -40,33 +55,51 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-# ==== END OF SOUND KEY BINDINGS ===================================================================
 
 
-# ==== GAPS ========================================================================================
+
+#
+# Assigning program to specific workspaces.
+#
+
+assign [class="^vivaldi$"] workspace number 1
+assign [class="^wezterm$"] workspace number 2
+assign [class="^dolphin$"] workspace number 3
+assign [class="^Godot$"] workspace number 5
+assign [class="^steam$"]   workspace number 10 
+
+
+
+#
+# Gaps. 
+#
+
 gaps inner 0
 gaps outer 0
 
-bindsym $mod+g mode "gaps"
+bindsym $mod+Shift+g mode "gaps"
 mode "gaps" {
-    bindsym i gaps outer current plus 5; gaps inner current plus 5
+    bindsym i gaps outer current plus 5;  gaps inner current plus 5
     bindsym d gaps outer current minus 5; gaps inner current minus 5
-    bindsym o gaps inner current set 0;  gaps outer current set 0
+    bindsym o gaps inner current set 0;   gaps outer current set 0
     bindsym f gaps inner current set 15;  gaps outer current set 15
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
-# ==== END OF GAPS =================================================================================
 
 
-# ==== DEFAULTS ====================================================================================
+
+#
+# Defaults. 
+#
+
 for_window [class="^.*"] border pixel 1
 for_window [instance=guvcview] sticky enable
-font pango:monospace 8
+
 floating_modifier $mod
-tiling_drag modifier titlebar
-bindsym $mod+Shift+space floating toggle ; [floating class="(wezterm)"] resize set 1000 1000 ; move position center
+tiling_drag       modifier titlebar
+font              pango:monospace 8
 
 set $mod Mod4
 set $term       --no-startup-id $TERMINAL
@@ -80,13 +113,15 @@ bindsym XF86Suspend  exec --no-startup-id lockscreen
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+x exec i3lock --color 000000
+bindsym $mod+Shift+x exec "i3-msg exit"
 bindsym $mod+Shift+n exec systemctl suspend
-# ==== END OF DEFAULTS =============================================================================
 
 
-# ==== POSITION ====================================================================================
+
+#
+# Position. 
+#
+
 # change focus (vim style)
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -104,7 +139,9 @@ bindsym $mod+Shift+Down  move down
 bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+p mode "position"
+bindsym $mod+Shift+space floating toggle ; [floating class="(wezterm)"] resize set 1000 1000 ; move position center
+
+bindsym $mod+Shift+p mode "position"
 mode "position" {
     bindsym h move position 0 px 31 px
     bindsym m move position mouse
@@ -114,18 +151,20 @@ mode "position" {
     bindsym Escape mode "default"
     bindsym $mod+p mode "default"
 }
-# ==== END OF POSITION =============================================================================
 
 
-# ==== LAYOUT ======================================================================================
-bindsym $mod+v split v
+
+#
+# Layout. 
+#
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+v split v
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
+# bindsym $mod+s layout stacking
 
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 # bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling/floating windows
@@ -160,35 +199,38 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym Left  resize shrink width 10 px or 10 ppt
-        bindsym Down  resize grow height 10 px or 10 ppt
-        bindsym Up    resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left  resize shrink width 100 px or 100 ppt
+        bindsym Down  resize grow height 100 px or 100 ppt
+        bindsym Up    resize shrink height 100 px or 100 ppt
+        bindsym Right resize grow width 100 px or 100 ppt
+
+        bindsym h resize shrink width 100 px or 100 ppt
+        bindsym j resize grow height 100 px or 100 ppt
+        bindsym k resize shrink height 100 px or 100 ppt
+        bindsym l resize grow width 100 px or 100 ppt
+
+        bindsym Shift+Left  resize shrink width 10 px or 10 ppt
+        bindsym Shift+Down  resize grow height 10 px or 10 ppt
+        bindsym Shift+Up    resize shrink height 10 px or 10 ppt
+        bindsym Shift+Right resize grow width 10 px or 10 ppt
         
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Shift+h resize shrink width 10 px or 10 ppt
+        bindsym Shift+j resize grow height 10 px or 10 ppt
+        bindsym Shift+k resize shrink height 10 px or 10 ppt
+        bindsym Shift+l resize grow width 10 px or 10 ppt
 
-        bindsym Shift+Left  resize shrink width 100 px or 100 ppt
-        bindsym Shift+Down  resize grow height 100 px or 100 ppt
-        bindsym Shift+Up    resize shrink height 100 px or 100 ppt
-        bindsym Shift+Right resize grow width 100 px or 100 ppt
-
-        bindsym Shift+h resize shrink width 100 px or 100 ppt
-        bindsym Shift+j resize grow height 100 px or 100 ppt
-        bindsym Shift+k resize shrink height 100 px or 100 ppt
-        bindsym Shift+l resize grow width 100 px or 100 ppt
-
-        # back to normal: Enter or Escape
+        # back to normal
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-# ==== END OF LAYOUT ===============================================================================
 
 
-# ==== COLORS ======================================================================================
+
+#
+# Colors. 
+#
+
 set $bg #065133
 set $fg #ffffff
 
@@ -199,5 +241,14 @@ client.focused          $bg     $bg     $fg  $bg       $bg
 # client.urgent           $bg     $bg     $fg  $bg       $bg
 # client.placeholder      $bg     $bg     $fg  $bg       $bg
 # client.background       $bg
-# ==== END OF COLORS ===============================================================================
 
+
+#
+# Keybindings that are still free:
+#
+#  * $mod+y
+#  * $mod+u
+#  * $mod+c
+#  * $mod+v
+#  * $mod+n
+#
