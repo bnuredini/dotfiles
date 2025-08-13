@@ -246,7 +246,9 @@ client.focused          $bg     $bg     $fg  $bg       $bg
 #
 # Keybindings that are still free:
 #
+#  * $mod+q
 #  * $mod+y
+#  * $mod+s
 #  * $mod+u
 #  * $mod+c
 #  * $mod+v
