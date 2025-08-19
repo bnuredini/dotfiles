@@ -18,3 +18,13 @@ To pick up all configs, use
 stow *
 ```
 
+## Install script
+
+There's a script, `install.sh`, which you can on Linux to install some of the programs I use
+regularly:
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
