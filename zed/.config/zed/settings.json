@@ -78,6 +78,9 @@
     },
     "CSS": {
       "tab_size": 2
+    },
+    "GDScript": {
+      "hard_tabs": true
     }
   }
 }
