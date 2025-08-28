@@ -3,7 +3,20 @@
     "context": "vim_mode == normal",
     "bindings": {
       // "vs": "pane::SplitVertical"
-      "vs": "pane::SplitLeft"
+      "vs": "pane::SplitLeft",
+      "ctrl-shift-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "(VimControl || (!Editor && !Terminal))",
+    "bindings": {
+      "s v": "pane::SplitVertical"
+    }
+  },
+  {
+    "context": "(VimControl || (!Editor && !Terminal))",
+    "bindings": {
+      "s h": "pane::SplitHorizontal"
     }
   }
 ]
