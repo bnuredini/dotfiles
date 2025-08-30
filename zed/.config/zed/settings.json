@@ -82,5 +82,7 @@
     "GDScript": {
       "hard_tabs": true
     }
-  }
+  },
+  "preferred_line_length": 100,
+  "soft_wrap": "preferred_line_length"
 }
