@@ -106,6 +106,15 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
+	{ key = "1", mods = "CTRL", action = wezterm.action.ActivateTab(0) },
+	{ key = "2", mods = "CTRL", action = wezterm.action.ActivateTab(1) },
+	{ key = "3", mods = "CTRL", action = wezterm.action.ActivateTab(2) },
+	{ key = "4", mods = "CTRL", action = wezterm.action.ActivateTab(3) },
+	{ key = "5", mods = "CTRL", action = wezterm.action.ActivateTab(4) },
+	{ key = "6", mods = "CTRL", action = wezterm.action.ActivateTab(5) },
+	{ key = "7", mods = "CTRL", action = wezterm.action.ActivateTab(6) },
+	{ key = "8", mods = "CTRL", action = wezterm.action.ActivateTab(7) },
+	{ key = "9", mods = "CTRL", action = wezterm.action.ActivateTab(8) },
 }
 
 local mux = wezterm.mux
@@ -128,17 +137,27 @@ wezterm.on("gui-startup", function()
 		{
 			title = "files",
 			cwd = wezterm.home_dir .. "/code",
-			args = { "yazi" },
+			args = { "fish", "-c", "cd " .. wezterm.home_dir .. "/code/ns; yazi" },
 		},
 		{
 			title = "editor",
 			cwd = wezterm.home_dir .. "/code/ns",
-			args = { "nvim", "." },
+			args = { "fish", "-c", "cd " .. wezterm.home_dir .. "/code/ns; nvim ." },
 		},
 		{
 			title = "runner",
 			cwd = wezterm.home_dir .. "/code/ns",
-			args = { "fish" },
+			args = { "fish", "-c", "cd " .. wezterm.home_dir .. "/code/ns; exec fish" },
+		},
+		{
+			title = "db",
+			cwd = wezterm.home_dir .. "/code/ns",
+			args = { "fish", "-c", "cd " .. wezterm.home_dir .. "/code/ns; exec fish" },
+		},
+		{
+			title = "ssh",
+			cwd = wezterm.home_dir .. "/code/ns",
+			args = { "fish", "-c", "cd " .. wezterm.home_dir .. "/code/ns; exec fish" },
 		},
 	}
 
