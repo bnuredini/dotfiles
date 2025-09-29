@@ -65,11 +65,13 @@ bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT
 # Assigning program to specific workspaces.
 #
 
-assign [class="^vivaldi$"] workspace number 1
-assign [class="^wezterm$"] workspace number 2
-assign [class="^dolphin$"] workspace number 3
-assign [class="^Godot$"] workspace number 5
-assign [class="^steam$"]   workspace number 10 
+assign [class="^vivaldi$"]   workspace number 1
+assign [class="^wezterm$"]   workspace number 2
+assign [class="^dolphin$"]   workspace number 3
+assign [class="^Godot$"]     workspace number 5
+assign [class="^Signal$"]    workspace number 8 
+assign [class="^steam$"]     workspace number 10 
+assign [class="^KeePassXC$"] workspace number 10 
 
 
 
