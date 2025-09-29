@@ -39,6 +39,7 @@ mode "launch" {
     bindsym $mod+o mode "default"
 }
 
+bindsym $mod+Tab exec --no-startup-id rofi -show combi -modes combi -combi-modes window
 bindsym $mod+x          exec rofi -show window
 bindsym $mod+d          exec "rofi -modi drun,run -show drun -show-icons"
 bindsym $mod+Shift+a    exec "~/.config/rofi/rofi-scripts/monitor_layout.sh" 
