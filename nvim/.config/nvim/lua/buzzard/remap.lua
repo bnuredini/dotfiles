@@ -46,6 +46,10 @@ vim.keymap.set('n', '<leader>ts', "m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>")
 vim.keymap.set('n', '<leader>td', "a# <C-R>=strftime('%Y-%m-%d')<CR>")
 vim.keymap.set('n', '~', 'i`')
 
+vim.keymap.set('i', '<C-k>', '✅', { noremap = true })
+vim.keymap.set('i', '<C-e>', '❌', { noremap = true })
+vim.keymap.set('i', '<C-q>', '❔', { noremap = true })
+
 vim.cmd [[
   autocmd FileType java nmap <F7> :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
 ]]

@@ -57,6 +57,7 @@ vim.cmd [[
 
 vim.cmd ':ab green_check_mark ✅'
 vim.cmd ':ab red_x ❌'
+vim.cmd ':ab q_mark ❔'
 
 -- Disable the line separator between splits
 vim.cmd 'set fillchars+=vert:\\ '
