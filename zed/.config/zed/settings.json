@@ -55,7 +55,6 @@
   },
   "format_on_save": "off",
   "use_autoclose": false,
-  "enable_preview_from_file_finder": true,
   "unnecessary_code_fade": 0.8,
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_features": {
