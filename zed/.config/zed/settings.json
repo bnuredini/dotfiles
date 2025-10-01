@@ -3,8 +3,7 @@
     "default_model": {
       "provider": "anthropic",
       "model": "claude-3-opus-latest"
-    },
-    "version": "2"
+    }
   },
   "telemetry": {
     "diagnostics": false,
@@ -19,7 +18,8 @@
   "git": {
     "inline_blame": {
       "enabled": false
-    }
+    },
+    "git_gutter": "hide"
   },
   "indent_guides": {
     "enabled": false
@@ -36,7 +36,7 @@
   "scrollbar": {
     "show": "never",
     "cursors": true,
-    "git_diff": true,
+    "git_diff": false,
     "search_results": true,
     "selected_symbol": true,
     "diagnostics": "all",
