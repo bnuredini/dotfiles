@@ -1,6 +1,23 @@
-if status is-interactive
+#
+# Exports.
+#
 
-  # fish_vi_key_bindings
+set --universal --export GOPATH $HOME/.local/go
+set --universal --export BUN_INSTALL "$HOME/.bun"
+set --universal --export PATH $BUN_INSTALL/bin $PATH
+
+fish_add_path $GOPATH/bin
+fish_add_path $HOME/code/scripts
+fish_add_path $HOME/bin
+
+zoxide init fish | source
+
+
+#
+# Vim stuff.
+#
+
+if status is-interactive
   set fish_cursor_default     block
   set fish_cursor_visual      block
   set fish_cursor_insert      line
@@ -11,21 +28,11 @@ set fish_vi_force_cursor 1
 set fish_greeting
 
 set EDITOR nvim
-set -Ux GOPATH $HOME/.local/go
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
 
-fish_add_path $GOPATH/bin
-fish_add_path $HOME/code/scripts
-fish_add_path $HOME/bin
-
-zoxide init fish | source
-
-function opend 
-    nvim ~/documents/(date +'%Y-%m-%d').md
-end
+#
+# Aliases.
+#
 
 # working with directories
 alias d="cd ~/downloads"
