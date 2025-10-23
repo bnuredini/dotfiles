@@ -75,8 +75,6 @@ alias rmc='rm *.class'
 alias rmo='rm -rf *.out*'
 alias rmt='rm -rvi ./tmp'
 alias r='ranger'
-alias z='fzf --bind "enter:execute(swallow zathura {}&)"'
-alias zb='cd ~/books && fzf --bind "enter:execute(swallow zathura {}&)"'
 alias date2name='~/downloads/bin/date2name/date2name/date2name.py'
 
 # volume aliases
