@@ -18,5 +18,15 @@
     "bindings": {
       "s h": "pane::SplitHorizontal"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-l s": "editor::StopLanguageServer"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-l r": "editor::RestartLanguageServer"
+    }
   }
 ]
