@@ -80,3 +80,19 @@ vim.cmd [[
 
 vim.keymap.set('n', '<leader>[', ':bp<CR>')
 vim.keymap.set('n', '<leader>]', ':bn<CR>')
+
+vim.keymap.set('n', '<leader>tt', function()
+  vim.notify 'Test keymap works!'
+end)
+
+if vim.g.vscode then
+  local vscode = require 'vscode-neovim'
+
+  vim.keymap.set('n', 'sv', function()
+    vscode.action 'workbench.action.splitEditorRight'
+  end, { desc = 'Split vertically' })
+
+  vim.keymap.set('n', 'sh', function()
+    vscode.action 'workbench.action.splitEditorDown'
+  end, { desc = 'Split horizontally' })
+end
