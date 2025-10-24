@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+file="$HOME/code/playground/python/snippets/$(date +%Y-%m-%d-%H-%M-%S-%3N).py"
+echo "Editing $file"
+exec "$EDITOR" "$file"
+

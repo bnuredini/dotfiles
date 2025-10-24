@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+file="$HOME/code/playground/c/snippets/$(date +%Y-%m-%d-%H-%M-%S-%3N).c"
+echo "Editing $file"
+exec "$EDITOR" "$file"
+
