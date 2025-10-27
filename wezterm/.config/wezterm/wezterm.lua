@@ -124,7 +124,7 @@ local window = nil
 
 config.default_workspace = "ns"
 
-wezterm.on("gui-startup", function()
+function load_ns_workspace()
 	local tab_data = {
 		{
 			title = "todo",
@@ -181,6 +181,8 @@ wezterm.on("gui-startup", function()
 
 		tab:set_title(tab_config.title)
 	end
-end)
+end
+
+-- wezterm.on("gui-startup", load_ns_workspace)
 
 return config
