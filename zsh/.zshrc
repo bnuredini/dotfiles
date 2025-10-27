@@ -107,3 +107,4 @@ opend() {
 ufetch
 
 source /home/bleart/.config/broot/launcher/bash/br
+. "/home/bleart/.deno/env"

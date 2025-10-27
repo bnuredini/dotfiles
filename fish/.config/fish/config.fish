@@ -27,7 +27,8 @@ end
 set fish_vi_force_cursor 1
 set fish_greeting
 
-set EDITOR nvim
+set -U xEDITOR nvim
+set -Ux GOPATH $HOME/.local/go
 
 
 #
@@ -69,6 +70,12 @@ alias i3conf='nvim ~/.config/i3/config'
 alias pconf='nvim ~/.config/polybar/config'
 alias lfconf='nvim ~/.config/lf/lfrc'
 alias fconf='nvim ~/.config/fish/config.fish'
+
+alias rmc='rm *.class'
+alias rmo='rm -rf *.out*'
+alias rmt='rm -rvi ./tmp'
+alias r='ranger'
+alias date2name='~/downloads/bin/date2name/date2name/date2name.py'
 
 # volume aliases
 alias am='amixer set Master 100'	# set max

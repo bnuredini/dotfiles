@@ -4,6 +4,8 @@ local config = wezterm.config_builder()
 config.font_size = 9.0
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("JetBrains Mono")
+config.initial_cols = 200
+config.initial_rows = 50
 
 local dark_color_scheme = "Jellybeans"
 local dark_background = "#151515"

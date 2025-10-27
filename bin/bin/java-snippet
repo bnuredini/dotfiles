@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+# Hyphens are not allied in Java files.
+file="$HOME/code/playground/java/snippets/Temp_$(date +%Y_%m_%d_%H_%M_%S_%3N).java" 
+echo "Editing $file"
+exec "$EDITOR" "$file"
+
