@@ -1,6 +1,6 @@
 # dotfiles
  
-Config files for vim, bash, i3, etc.
+Config files for NeoVim, fish, i3, etc.
 
 ## Using `stow`
 
