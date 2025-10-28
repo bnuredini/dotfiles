@@ -68,3 +68,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.textwidth = 100
   end,
 })
+
+if vim.g.vscode then
+  vim.o.cmdheight = 4
+end
