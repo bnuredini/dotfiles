@@ -17,6 +17,8 @@ zoxide init fish | source
 # Vim stuff.
 #
 
+fish_vi_key_bindings
+
 if status is-interactive
   set fish_cursor_default     block
   set fish_cursor_visual      block
@@ -27,7 +29,7 @@ end
 set fish_vi_force_cursor 1
 set fish_greeting
 
-set -U xEDITOR nvim
+set -Ux EDITOR nvim
 set -Ux GOPATH $HOME/.local/go
 
 
@@ -67,6 +69,7 @@ alias opend="nvim ~/documents/(date +'%Y-%m-%d').md"
 # config files
 alias vconf='cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua'
 alias i3conf='nvim ~/.config/i3/config'
+alias wconf='nvim ~/.config/wezterm/wezterm.lua'
 alias pconf='nvim ~/.config/polybar/config'
 alias lfconf='nvim ~/.config/lf/lfrc'
 alias fconf='nvim ~/.config/fish/config.fish'
