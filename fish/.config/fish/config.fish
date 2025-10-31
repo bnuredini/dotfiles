@@ -4,11 +4,12 @@
 
 set --universal --export GOPATH $HOME/.local/go
 set --universal --export BUN_INSTALL "$HOME/.bun"
-set --universal --export PATH $BUN_INSTALL/bin $PATH
 
 fish_add_path $GOPATH/bin
 fish_add_path $HOME/code/scripts
 fish_add_path $HOME/bin
+fish_add_path /usr/local/go/bin
+fish_add_path $BUN_INSTALL/bin
 
 zoxide init fish | source
 
