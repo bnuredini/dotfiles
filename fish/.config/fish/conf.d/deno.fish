@@ -1,0 +1,1 @@
+source "/home/bleart/.deno/env.fish"
