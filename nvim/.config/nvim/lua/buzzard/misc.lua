@@ -7,6 +7,7 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.wrap = false
 
 vim.opt.hlsearch = false -- don't hightlight searches

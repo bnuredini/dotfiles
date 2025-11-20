@@ -67,6 +67,10 @@ vim.cmd [[
 ]]
 
 vim.cmd [[
+  autocmd Filetype typescript nmap <F7> :w<CR>:!bun %<CR>
+]]
+
+vim.cmd [[
     autocmd Filetype python nmap <F7> :w<CR>:!python3 %<CR>
 ]]
 
@@ -76,6 +80,10 @@ vim.cmd [[
 
 vim.cmd [[
     autocmd Filetype markdown nmap <F7> :w<CR>:!pandoc -f markdown -t html %:p -o %:p:h/notes-html/%:t:r.html --css ~/code/tmp/styles/pandoc.css --standalone --quiet<CR> 
+]]
+
+vim.cmd [[
+    autocmd Filetype gdscript nmap <F7> :w<CR>:!godot --quit --no-header --script %<CR>
 ]]
 
 vim.keymap.set('n', '<leader>[', ':bp<CR>')
