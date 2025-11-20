@@ -82,7 +82,7 @@
       "hard_tabs": true
     }
   },
-  "preferred_line_length": 100,
+  "preferred_line_length": 80,
   "title_bar": {
     "show_sign_in": false
   }
