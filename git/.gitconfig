@@ -2,7 +2,7 @@
 	name = Bleart Nuredini
 	email = nuredini.bleart@gmail.com
 [core]
-    editor = vim
+    editor = nvim
 	autocrlf = input
     pager = delta
 [credential]
