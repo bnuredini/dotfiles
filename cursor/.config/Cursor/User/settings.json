@@ -105,7 +105,6 @@
         "editorGroupBorder": "#00000000",
         "editorGroupHeader.tabsBorder": "#00000000"
     },
-    "clangd.path": "c:\\Users\\bleart\\AppData\\Roaming\\Cursor\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
     "editor.inlayHints.enabled": "off",
     "editor.suggest.showInlineDetails": false,
     "git.openRepositoryInParentFolders": "always",
