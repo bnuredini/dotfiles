@@ -23,7 +23,7 @@
     "editor.smoothScrolling": true,
     "editor.semanticHighlighting.enabled": false,
     "editor.cursorBlinking": "solid",
-    "html.suggest.html5": false,
+    "html.suggest.html5": false,    
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
@@ -49,7 +49,6 @@
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 100,
     "editor.overviewRulerBorder": false,
-    "editor.hideCursorInOverviewRuler": true,
     "editor.scrollBeyondLastLine": false,
     "workbench.settings.editor": "json",
     "workbench.editor.showTabs": "none",
@@ -102,7 +101,28 @@
     "workbench.colorCustomizations": {
         "editorGutter.addedBackground": "#0000",
         "editorGutter.modifiedBackground": "#0000",
-        "editorGutter.deletedBackground": "#0000"
-},
-"update.mode": "manual"
+        "editorGutter.deletedBackground": "#0000",
+        "editorGroupBorder": "#00000000",
+        "editorGroupHeader.tabsBorder": "#00000000"
+    },
+    "clangd.path": "c:\\Users\\bleart\\AppData\\Roaming\\Cursor\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+    "editor.inlayHints.enabled": "off",
+    "editor.suggest.showInlineDetails": false,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.stickyScroll.enabled": false,
+    "breadcrumbs.enabled": false,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["s", "v"],
+            "commands": ["workbench.action.splitEditorRight"]
+        },
+        {
+            "before": ["s", "h"],
+            "commands": ["workbench.action.splitEditorDown"]
+        }
+    ],
+    "window.menuBarVisibility": "compact",
+    "workbench.navigationControl.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.editor.editorActionsLocation": "hidden",
 }
