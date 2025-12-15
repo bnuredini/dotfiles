@@ -1,0 +1,23 @@
+[
+	{
+		"name": "pathsurfer",
+		"rootPath": "/home/bleart/code/pathsurfer",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "qot",
+		"rootPath": "/home/bleart/code/qot",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "makina",
+		"rootPath": "/home/bleart/code/makina",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	}
+]
