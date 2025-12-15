@@ -124,4 +124,8 @@
     "workbench.navigationControl.enabled": false,
     "workbench.layoutControl.enabled": false,
     "workbench.editor.editorActionsLocation": "hidden",
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "manual",
+    "markdown.editor.updateLinksOnPaste.enabled": false,
 }
+
