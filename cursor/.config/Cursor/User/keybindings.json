@@ -32,5 +32,10 @@
         "key": "f7",
         "command": "workbench.action.debug.continue",
         "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus"
     }
 ]
