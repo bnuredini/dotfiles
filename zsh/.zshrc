@@ -90,8 +90,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-eval "$(starship init zsh)"
-
 newd() {
     touch ~/documents/$(date +'%Y-%m-%d').md 
     echo "# $(date +'%Y-%m-%d')\n\n" >> ~/documents/$(date +'%Y-%m-%d').md
@@ -104,7 +102,7 @@ opend() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-ufetch
-
 source /home/bleart/.config/broot/launcher/bash/br
-. "/home/bleart/.deno/env"
+
+# Load the psurf shell function
+source /home/bleart/.local/share/pathsurfer/functions/psurf.sh
