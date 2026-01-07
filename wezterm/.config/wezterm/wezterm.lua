@@ -6,6 +6,7 @@ config.window_decorations = "RESIZE"
 config.font = wezterm.font("JetBrains Mono")
 config.initial_cols = 200
 config.initial_rows = 50
+config.tab_max_width = 16
 
 local dark_color_scheme = "Jellybeans"
 local dark_background = "#151515"
@@ -35,6 +36,14 @@ wezterm.on("toggle-color-scheme", function(window, pane)
 	end
 
 	window:set_config_overrides(overrides)
+end)
+
+wezterm.on("format-tab-title", function(tab)
+	if tab.tab_title and #tab.tab_title > 0 then
+		return tab.tab_title
+	end
+
+	return string.format("Tab %d", tab.tab_index + 1)
 end)
 
 config.keys = {
