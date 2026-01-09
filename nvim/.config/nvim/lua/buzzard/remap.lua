@@ -40,7 +40,7 @@ vim.keymap.set('n', '<leader>oh', ':Oil<CR>')
 vim.keymap.set('n', '<leader>eg', vim.cmd.Goyo)
 vim.keymap.set('n', '<leader>ec', ':set cursorline! cursorcolumn!<CR>')
 vim.keymap.set('n', '<leader>es', ':setlocal spell! spelllang=en_us<CR>')
-vim.keymap.set('n', '<leader>el', ':Limelight<CR>')
+vim.keymap.set('n', '<leader>el', ':Limelight!!<CR>')
 
 vim.keymap.set('n', '<leader>ts', "m'A<C-R>=strftime('%Y%m%dT%H%M%S')<CR>")
 vim.keymap.set('n', '<leader>td', "a# <C-R>=strftime('%Y-%m-%d')<CR>")
