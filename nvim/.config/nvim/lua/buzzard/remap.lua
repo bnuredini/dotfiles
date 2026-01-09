@@ -89,10 +89,6 @@ vim.cmd [[
 vim.keymap.set('n', '<leader>[', ':bp<CR>')
 vim.keymap.set('n', '<leader>]', ':bn<CR>')
 
-vim.keymap.set('n', '<leader>tt', function()
-  vim.notify 'Test keymap works!'
-end)
-
 if vim.g.vscode then
   local vscode = require 'vscode-neovim'
 
