@@ -192,6 +192,9 @@ function load_ns_workspace()
 	end
 end
 
--- wezterm.on("gui-startup", load_ns_workspace)
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
 
 return config
