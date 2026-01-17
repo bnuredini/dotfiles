@@ -13,7 +13,6 @@ vim.opt.wrap = false
 vim.opt.hlsearch = false -- don't hightlight searches
 vim.opt.incsearch = true -- incremental search
 
-vim.opt.colorcolumn = '100'
 vim.opt.textwidth = 100
 
 vim.opt.termguicolors = true
