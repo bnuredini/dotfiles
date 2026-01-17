@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.font_size = 9.0
+config.font_size = 13.0
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("JetBrains Mono")
 config.initial_cols = 200
