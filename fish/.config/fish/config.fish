@@ -11,6 +11,7 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 fish_add_path /usr/local/go/bin
 fish_add_path $BUN_INSTALL/bin
+fish_add_path /home/bleart/.nvm/versions/node/v18.20.3/bin
 
 zoxide init fish | source
 
@@ -38,6 +39,9 @@ set -Ux GOPATH $HOME/.local/go
 #
 # Aliases.
 #
+
+alias ccd="psurf"
+alias qot="~/code/qot/build/game.x86_64"
 
 # working with directories
 alias d="cd ~/downloads"
