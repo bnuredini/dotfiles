@@ -1,38 +1,39 @@
 {
-  "agent": {
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-opus-latest"
-    }
+  "buffer_font_family": ".ZedMono",
+  "buffer_font_size": 15.0,
+  "ui_font_features": {
+    "calt": false,
   },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "theme": {
-    "mode": "system",
-    "light": "Gruvbox Dark Hard",
-    "dark": "Jellybeans"
-  },
+  "ui_font_size": 16,
+  "show_edit_predictions": true,
+  "soft_wrap": "editor_width",
+  "preferred_line_length": 80,
+  "hover_popover_delay": 1000,
+  "theme": "Gruvbox Dark Hard",
   "vim_mode": true,
   "git": {
     "inline_blame": {
-      "enabled": false
+      "enabled": false,
     },
-    "git_gutter": "hide"
+    "git_gutter": "hide",
   },
   "indent_guides": {
-    "enabled": false
+    "enabled": false,
   },
-  "restore_on_startup": "none",
-  "auto_update": false,
+  "restore_on_startup": "empty_tab",
+  "format_on_save": "off",
+  "use_autoclose": false,
+  "unnecessary_code_fade": 0.8,
   "centered_layout": {
     "left_padding": 0.2,
-    "right_padding": 0.2
+    "right_padding": 0.2,
   },
   "current_line_highlight": "none",
   "cursor_blink": false,
   "cursor_shape": "bar",
+  "gutter": {
+    "line_numbers": false,
+  },
   "scrollbar": {
     "show": "never",
     "cursors": true,
@@ -42,48 +43,84 @@
     "diagnostics": "all",
     "axes": {
       "horizontal": true,
-      "vertical": true
-    }
+      "vertical": true,
+    },
+  },
+  "status_bar": {
+    "cursor_position_button": false,
+    "active_language_button": false
+  },
+  "title_bar": {
+    "show_user_menu": false,
+    "show_branch_name": false,
+    "show_sign_in": false,
   },
   "tab_bar": {
     "show": false,
-    "show_nav_history_buttons": true
+    "show_nav_history_buttons": true,
+  },
+  "project_panel": {
+    "button": false,
+    "starts_open": false,
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "git_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": false
+  },
+  "terminal": {
+    "button": false
+  },
+  "search": {
+    "button": false
+  },
+  "debugger": {
+    "button": false
   },
   "toolbar": {
+    "code_actions": false,
+    "agent_review": true,
+    "selections_menu": true,
     "breadcrumbs": true,
-    "quick_actions": true
+    "quick_actions": false,
   },
-  "format_on_save": "off",
-  "use_autoclose": false,
-  "unnecessary_code_fade": 0.8,
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_features": {
-    "calt": false
+  "agent": {
+    "button": false,
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-opus-latest",
+    },
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 12,
   "file_types": {
-    "HTML": ["gohtml"]
-  },
-  "gutter": {
-    "line_numbers": false
+    "HTML": ["gohtml"],
   },
   "languages": {
     "Go": {
-      "show_edit_predictions": false
+      "show_edit_predictions": false,
     },
     "HTML": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "CSS": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "GDScript": {
-      "hard_tabs": true
-    }
+      "hard_tabs": true,
+    },
   },
-  "preferred_line_length": 80,
-  "title_bar": {
-    "show_sign_in": false
-  }
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
 }
