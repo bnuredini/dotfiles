@@ -2,26 +2,41 @@
   "inline_code_actions": false,
   "show_completions_on_input": false,
   "show_whitespaces": "none",
-  "selection_highlight": false,
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "autosave": "off",
+  "auto_update": false,
+
+  // Fonts
   "buffer_font_family": ".ZedMono",
+  "buffer_font_fallbacks": ["JetBrains Mono"],
+  "buffer_font_weight": 400,
   "buffer_font_size": 15.0,
+  "ui_font_family": ".ZedSans",
+  "ui_font_weight": 400.0,
+  "ui_font_size": 16,
   "ui_font_features": {
     "calt": false,
   },
-  "ui_font_size": 16,
+
   "show_edit_predictions": true,
   "soft_wrap": "editor_width",
   "show_wrap_guides": false,
   "preferred_line_length": 80,
   "hover_popover_delay": 1000,
   "theme": "Gruvbox Dark Hard",
-  "vim_mode": true,
+
+  // Git
   "git": {
     "inline_blame": {
       "enabled": false,
     },
     "git_gutter": "hide",
+    "branch_picker": {
+      "show_author_name": true
+    }
   },
+
   "indent_guides": {
     "enabled": false,
   },
@@ -33,11 +48,16 @@
     "left_padding": 0.2,
     "right_padding": 0.2,
   },
+
+  // Highlighting
+  "selection_highlight": false,
   "current_line_highlight": "none",
+
   "cursor_blink": false,
   "cursor_shape": "bar",
   "gutter": {
     "line_numbers": false,
+    "min_line_number_digits": 2
   },
   "scrollbar": {
     "show": "never",
@@ -45,12 +65,14 @@
     "git_diff": false,
     "search_results": true,
     "selected_symbol": true,
-    "diagnostics": "all",
+    "diagnostics": "error",
     "axes": {
       "horizontal": true,
       "vertical": true,
     },
   },
+
+  // Bars
   "title_bar": {
     "show_onboarding_banner": false,
     "show_user_menu": false,
@@ -62,15 +84,29 @@
     "show_nav_history_buttons": true,
   },
   "status_bar": {
-    "experimental.show": false,
-    "cursor_position_button": false,
+    "experimental.show": true,
+    "cursor_position_button": true,
+    "line_endings_button": false,
     "active_language_button": false,
   },
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": true,
+    "selections_menu": true,
+    "breadcrumbs": true,
+    "quick_actions": false,
+  },
+  "file_finder": {
+    "modal_max_width": "small",
+  },
+
+  // Panels
   "project_panel": {
     "button": false,
     "starts_open": false,
     "hide_root": true,
     "auto_fold_dirs": false,
+    "git_status": false,
     "indent_guides": {
       "show": "never",
     },
@@ -82,9 +118,6 @@
       "show": "never",
     },
   },
-  "file_finder": {
-    "modal_max_width": "small",
-  },
   "collaboration_panel": {
     "button": false
   },
@@ -94,9 +127,12 @@
   "git_panel": {
     "button": false
   },
+
+  "diagnostics_max_severity": "error",
   "diagnostics": {
     "button": false
   },
+
   "terminal": {
     "button": false
   },
@@ -106,12 +142,10 @@
   "debugger": {
     "button": false
   },
-  "toolbar": {
-    "code_actions": false,
-    "agent_review": true,
-    "selections_menu": true,
-    "breadcrumbs": true,
-    "quick_actions": false,
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
   },
   "agent": {
     "button": false,
@@ -137,9 +171,16 @@
       "hard_tabs": true,
     },
   },
-  "auto_update": false,
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
   },
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "make": true,
+    "sql": true,
+    "toml": true,
+  }
 }
