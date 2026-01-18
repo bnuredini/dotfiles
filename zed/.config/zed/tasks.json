@@ -45,9 +45,4 @@
     //     }
     "shell": "system"
   },
-  {
-    "command": "git --paginate log --follow -p -m -1 ${ZED_FILE}",
-    "label": "last-file-diff:${ZED_FILE}",
-    "shell": { "program": "sh" }
-  },
 ]
