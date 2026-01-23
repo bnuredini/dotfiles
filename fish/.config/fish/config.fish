@@ -62,10 +62,10 @@ alias monitor-rotate-right='~/code/scripts/rotate_normal_monitor.sh'
 alias v='nvim'
 alias vf='nvim (fzf)'
 alias p="python3"
-alias ll='exa -alF'
-alias la='exa -A'
-alias l='exa -CF'
-alias lsj='exa | grep .java'
+alias ll='eza -alF'
+alias la='eza -A'
+alias l='eza -CF'
+alias lsj='eza | grep .java'
 
 # documents
 alias td='cd ~/documents && nvim ~/documents/todo.md'
