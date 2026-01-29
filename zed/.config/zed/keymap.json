@@ -28,5 +28,10 @@
     "bindings": {
       "ctrl-l r": "editor::RestartLanguageServer"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-x ctrl-d": "editor::ToggleDiagnostics"
+    }
   }
 ]
