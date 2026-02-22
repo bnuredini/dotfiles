@@ -59,9 +59,6 @@ require('lazy').setup {
     dependencies = { { 'nvim-lua/plenary.nvim' } },
     config = function()
       require('telescope').setup {
-        -- You can put your default mappings / updates / etc. in here
-        --  All the info you're looking for is in `:help telescope.setup()`
-        --
         defaults = {
           file_ignore_patterns = { '%.pdf', '%.epub', '%.ods' },
         },
