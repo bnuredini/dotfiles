@@ -42,6 +42,16 @@ vim.keymap.set('i', '<C-k>', '✅', { noremap = true })
 vim.keymap.set('i', '<C-e>', '❌', { noremap = true })
 vim.keymap.set('i', '<C-q>', '❔', { noremap = true })
 
+vim.keymap.set('n', '<leader>[', ':bp<CR>')
+vim.keymap.set('n', '<leader>]', ':bn<CR>')
+
+vim.keymap.set('n', '<F2>', ':%s/w/ë/g<CR>')
+vim.keymap.set('n', '<F3>', ':%s/@/ç/g<CR>')
+vim.keymap.set('n', '<F4>', ':%s/&/w/g<CR>')
+vim.keymap.set('n', '<F9>', ':%s/W/Ë/g<CR>')
+vim.keymap.set('n', '<F7>', ':!./%<CR>')
+vim.keymap.set('n', '<F10>', ':w<CR>:VimwikiAll2HTML<CR>')
+
 vim.cmd [[
   autocmd FileType java nmap <F7> :w<CR>:!javac % && java -cp %:p:h %:t:r<CR>
 ]]
@@ -77,9 +87,6 @@ vim.cmd [[
 vim.cmd [[
     autocmd Filetype gdscript nmap <F7> :w<CR>:!godot --quit --no-header --script %<CR>
 ]]
-
-vim.keymap.set('n', '<leader>[', ':bp<CR>')
-vim.keymap.set('n', '<leader>]', ':bn<CR>')
 
 if vim.g.vscode then
   local vscode = require 'vscode-neovim'
