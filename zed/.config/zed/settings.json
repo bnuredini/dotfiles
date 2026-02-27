@@ -1,4 +1,6 @@
 {
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": false,
   "inline_code_actions": false,
   "show_completions_on_input": false,
   "show_whitespaces": "none",
