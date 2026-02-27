@@ -47,6 +47,11 @@ wezterm.on("format-tab-title", function(tab)
 end)
 
 config.keys = {
+    {
+        mods = "CMD",
+        key = "p",
+        action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|TABS" }),
+    },
 	{
 		key = '"',
 		mods = "CTRL|SHIFT",
