@@ -69,6 +69,7 @@ alias lsj='eza | grep .java'
 
 # documents
 alias td='cd ~/documents && nvim ~/documents/todo.md'
+alias work="cd ~/documents && nvim work.md"
 alias vw='cd ~/documents/notes && vim index.wiki'
 alias opend="nvim ~/documents/(date +'%Y-%m-%d').md"
 
