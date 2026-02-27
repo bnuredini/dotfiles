@@ -9,6 +9,22 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [alias]
     diffall = "!f() { for file in $(git ls-files --others --exclude-standard); do git diff --no-index /dev/null \"$file\"; done; }; f"
+    alias = !echo 'git config --get-regexp ^alias\\.' && git config --get-regexp ^alias\\.
+    ac = !echo 'git add -A , git commit -m' && git add -A && git commit -m
+    b = !echo 'git branch' && git branch
+    browse = !echo 'start `git config get remote.origin.url`' && start `git config get remote.origin.url`
+    co = !echo 'git checkout' && git checkout
+    commit-empty = !echo 'git commit --allow-empty -m \"chore: Empty commit to re-trigger build\"' && git commit --allow-empty -m \"chore: Empty commit to re-trigger build\"
+    delete-local-branches-already-merged-in-remote = !echo 'git branch --merged | egrep -i -v(main|master|develop|dev|staging|release)| xargs -r git branch -d' && git branch --merged | egrep -i -v '(main|master|develop|dev|staging|release)' | xargs -r git branch -d
+    delete-local-branches-already-merged-in-remote-dry-run = !echo 'git branch --merged | egrep -i -v '(main|master|develop|dev|staging|release)'
+    delete-local-tags = !echo 'git tag -l | xargs git tag -d && git fetch --tags' && git tag -l | xargs git tag -d && git fetch --tags
+    delete-stale-remote-tracking-branches-from-local = !echo 'git remote prune origin' && git remote prune origin
+    gtfo = !echo 'git reset --hard , git clean -xfd' && git reset --hard && git clean -xfd
+    history = !echo 'git log --oneline --graph --decorate --all' && git log --oneline --graph --decorate --all
+    s = !echo 'git status' && git status
+    pushf = !echo 'git push --force-with-lease' && git push --force-with-lease
+    pushnew = !echo 'git push --set-upstream origin branch_name' && git push --set-upstream origin `git symbolic-ref --short HEAD`
+    stashall = !echo 'git stash push --include-untracked' && git stash push --include-untracked
 [interactive]
     diffFilter = delta --color-only
 [delta]
