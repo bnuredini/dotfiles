@@ -140,6 +140,7 @@
     "button": false
   },
   "search": {
+    "regex": false,
     "button": false
   },
   "debugger": {
