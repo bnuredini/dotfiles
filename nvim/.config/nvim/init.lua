@@ -60,7 +60,7 @@ require('lazy').setup {
     config = function()
       require('telescope').setup {
         defaults = {
-          file_ignore_patterns = { '%.pdf', '%.epub', '%.ods' },
+          file_ignore_patterns = { '%.pdf', '%.epub', '%.ods', '%.png', '%.jpg', '%.jpeg', '%.JPG' },
         },
         extensions = {
           ['ui-select'] = {
