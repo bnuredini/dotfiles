@@ -50,10 +50,10 @@ require('lazy').setup {
   'folke/neodev.nvim',
   {
     'nanotech/jellybeans.vim',
-    init = function()
-      vim.cmd.colorscheme 'jellybeans'
-    end,
+    lazy = false,
+    priority = 1000,
   },
+  'https://github.com/kepano/flexoki-neovim',
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { { 'nvim-lua/plenary.nvim' } },

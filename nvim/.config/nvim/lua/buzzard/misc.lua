@@ -70,3 +70,18 @@ vim.api.nvim_create_autocmd('FileType', {
 if vim.g.vscode then
   vim.o.cmdheight = 4
 end
+
+local function set_theme()
+  local hour = tonumber(os.date("%H"))
+
+  if hour >= 18 or hour < 6 then
+    vim.cmd("colorscheme jellybeans")
+  else
+    vim.cmd("colorscheme flexoki-light")
+  end
+end
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = set_theme,
+})

@@ -1,2 +1,2 @@
-require 'buzzard.remap'
-require 'buzzard.misc'
+require('buzzard.remap')
+require('buzzard.misc')
