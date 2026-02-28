@@ -26,7 +26,11 @@
   "show_wrap_guides": false,
   "preferred_line_length": 80,
   "hover_popover_delay": 1000,
-  "theme": "Gruvbox Dark Hard",
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark"
+  },
 
   // Git
   "git": {
