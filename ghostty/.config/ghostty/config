@@ -1,3 +1,4 @@
 theme = light:Flexoki Light,dark:t
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
+mouse-scroll-multiplier = 1
