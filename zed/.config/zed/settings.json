@@ -215,5 +215,32 @@
     "make": true,
     "sql": true,
     "toml": true,
-  }
+  },
+
+  // Custom theme
+  "theme_overrides": {
+    "Gruvbox Dark": {
+      "syntax": {
+        "comment": {
+          "color": "#B8BB25FF"
+        },
+        "function": {
+          "color": "#DEC89CFF"
+        },
+        "keyword": {
+          "color": "#FFFFFFFF"
+        },
+        "string": {
+          "color": "#DB7C60FF"
+        },
+        "variable": {
+          "color": "#E0CBACFF"
+        }
+      },
+      "editor.document_highlight.bracket_background": "#00000000"
+    }
+  },
+  "vim": {
+    "use_system_clipboard": "always",
+  },
 }
