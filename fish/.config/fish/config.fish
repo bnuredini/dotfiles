@@ -15,7 +15,6 @@ fish_add_path /home/bleart/.nvm/versions/node/v18.20.3/bin
 
 zoxide init fish | source
 
-
 #
 # Vim stuff.
 #
@@ -40,8 +39,10 @@ set -Ux GOPATH $HOME/.local/go
 # Aliases.
 #
 
+alias dls="docker container ls --format 'table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}'"
 alias ccd="psurf"
 alias qot="~/code/qot/build/game.x86_64"
+alias z="zed -r"
 
 # working with directories
 alias d="cd ~/downloads"
@@ -101,6 +102,7 @@ alias tn="t new -t"
 
 # git
 alias gs="git status"
+alias gb="git branch"
 alias gl="git log --graph --all --oneline"
 alias gd="git diff"
 alias gp="git push"
