@@ -33,5 +33,57 @@
     "bindings": {
       "ctrl-x ctrl-d": "editor::ToggleDiagnostics"
     }
+  },
+  {
+    "bindings": {
+      "cmd-1": "project_panel::Toggle"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-2": "git_panel::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-3": [
+        "workspace::ActivatePane",
+        2
+      ]
+    }
+  },
+  {
+    "context": "Welcome",
+    "unbind": {
+      "cmd-3": [
+        "welcome::OpenRecentProject",
+        2
+      ]
+    }
+  },
+  {
+    "bindings": {
+      "cmd-5": "outline_panel::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-4": [
+        "workspace::ActivatePane",
+        3
+      ]
+    }
+  },
+  {
+    "bindings": {
+      "cmd-4": "debug_panel::Toggle"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-3": "agent::Toggle"
+    }
   }
 ]
