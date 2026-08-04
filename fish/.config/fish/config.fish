@@ -105,5 +105,13 @@ alias gs="git status"
 alias gb="git branch"
 alias gl="git log --graph --all --oneline"
 alias gd="git diff"
-alias gp="git push"
-alias gfp="git push -f"
+alias gp="git push origin (git branch --show-current)"
+alias gfp="git push --force origin (git branch --show-current)"
+
+set -gx TERM xterm-256color
+
+# For managing Node versions
+fnm env --use-on-cd | source
+
+# Pi
+fish_add_path "/Users/bleartnuredini/.local/share/fnm/node-versions/v22.22.2/installation/bin"
