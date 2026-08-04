@@ -18,3 +18,6 @@ export FZF_DEFAULT_OPTS='--height 100% --layout=reverse --exact'
 weather() { ansiweather -l Ferizaj -a false; }
 
 o() { xdg-open "$(fzf)"; }
+
+# Load the psurf shell function
+source /Users/bleartnuredini/.local/share/pathsurfer/functions/psurf.sh
