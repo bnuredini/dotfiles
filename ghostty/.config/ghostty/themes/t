@@ -16,7 +16,7 @@ palette = 14=#5abfb5
 palette = 15=#b5bfe2
 background = #121212
 foreground = #c6d0f5
-cursor-color = #f2d5cf
+cursor-color = #fff
 cursor-text = #c6d0f5
 selection-background = #626880
 selection-foreground = #c6d0f5
