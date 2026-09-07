@@ -93,6 +93,7 @@
   // Bars
   "title_bar": {
     "show_project_items": true,
+    "show_branch_icon": false,
     "show_onboarding_banner": false,
     "show_user_menu": false,
     "show_branch_name": false,
@@ -121,7 +122,6 @@
 
   // Panels
   "project_panel": {
-    "dock": "left",
     "hide_hidden": false,
     "folder_icons": true,
     "file_icons": true,
@@ -151,10 +151,9 @@
     "button": false,
   },
   "git_panel": {
-    "dock": "left",
     "tree_view": true,
     "button": false,
-    "default_width": 350.0,
+    "default_width": 250.0,
   },
 
   "diagnostics_max_severity": "error",
@@ -179,7 +178,6 @@
     "show_parameter_hints": true,
   },
   "agent": {
-    "dock": "right",
     "button": false,
     "default_model": {
       "provider": "anthropic",
