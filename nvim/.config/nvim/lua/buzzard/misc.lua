@@ -6,6 +6,7 @@ vim.opt.smartindent = true
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.wrap = false
+vim.opt.undofile = true
 
 vim.opt.hlsearch = false -- don't hightlight searches
 vim.opt.incsearch = true -- incremental search
@@ -60,25 +61,12 @@ vim.cmd(':ab green_check_mark ✅')
 vim.cmd(':ab red_x ❌')
 vim.cmd(':ab q_mark ❔')
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'vimwiki',
-  callback = function()
-    vim.opt_local.textwidth = 100
-  end,
-})
-
 if vim.g.vscode then
   vim.o.cmdheight = 4
 end
 
-local function set_theme()
-  local hour = tonumber(os.date("%H"))
-
-  if hour >= 18 or hour < 6 then
-    vim.cmd("colorscheme jellybeans")
-  else
-    vim.cmd("colorscheme flexoki-light")
-  end
+local function set_theme() 
+    vim.cmd('colorscheme gruvbox')
 end
 
 vim.api.nvim_create_autocmd("User", {

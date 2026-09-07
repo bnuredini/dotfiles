@@ -19,7 +19,7 @@ require('lazy').setup {
   'junegunn/limelight.vim',
   'preservim/nerdcommenter',
   'tpope/vim-commentary',
-  'tpope/vim-surround',
+  'nvim-mini/mini.surround',
   {
     'tpope/vim-fugitive',
     config = function()
@@ -53,6 +53,7 @@ require('lazy').setup {
     lazy = false,
     priority = 1000,
   },
+  'ellisonleao/gruvbox.nvim',
   'https://github.com/kepano/flexoki-neovim',
   {
     'nvim-telescope/telescope.nvim',
