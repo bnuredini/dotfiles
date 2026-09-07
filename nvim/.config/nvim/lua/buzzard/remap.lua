@@ -57,33 +57,24 @@ vim.keymap.set('i', ';;x', '❌', { noremap = true })
 vim.keymap.set('i', ';;q', '❔', { noremap = true })
 
 
-vim.cmd [[
-  autocmd Filetype sh nmap <F7>:w<CR>!./%<CR>
-]]
+local function new_daily_note()
+  local date = os.date("%Y-%m-%d")
+  local filename = date .. ".md"
 
-vim.cmd [[
-  autocmd Filetype javascript nmap <F7> :w<CR>:!node %<CR>
-]]
+  vim.cmd("edit " .. filename)
 
-vim.cmd [[
-  autocmd Filetype typescript nmap <F7> :w<CR>:!bun %<CR>
-]]
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, {
+    "# " .. date,
+    "",
+    "",
+  })
 
-vim.cmd [[
-    autocmd Filetype python nmap <F7> :w<CR>:!python3 %<CR>
-]]
+  -- Put the cursor on the third line and enter Insert mode.
+  vim.api.nvim_win_set_cursor(0, { 3, 0 })
+  vim.cmd("startinsert")
+end
 
-vim.cmd [[
-    autocmd Filetype go nmap <F7> :w<CR>:!go run %<CR>
-]]
-
-vim.cmd [[
-    autocmd Filetype markdown nmap <F7> :w<CR>:!pandoc -f markdown -t html %:p -o %:p:h/notes-html/%:t:r.html --css ~/code/tmp/styles/pandoc.css --standalone --quiet<CR> 
-]]
-
-vim.cmd [[
-    autocmd Filetype gdscript nmap <F7> :w<CR>:!godot --quit --no-header --script %<CR>
-]]
+vim.keymap.set("n", "<leader>nn", new_daily_note, { desc = "New daily note" })
 
 if vim.g.vscode then
   local vscode = require 'vscode-neovim'
