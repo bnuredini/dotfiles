@@ -3,6 +3,7 @@
 #
 
 set --universal --export GOPATH $HOME/.local/go
+set --universal --export VISUAL nvim
 set --universal --export EDITOR nvim
 set -gx TERM xterm-256color
 
