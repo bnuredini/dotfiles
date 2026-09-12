@@ -10,3 +10,5 @@ fish/funcs/
 fish/.config/fish/completions/
 fish/.config/fish/conf.d/ns.fish
 fish/.config/fish/fish_variables
+
+lock.mdb
