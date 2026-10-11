@@ -6,3 +6,4 @@ keybind = ctrl+shift+k=goto_split:up
 mouse-scroll-multiplier = 1
 cursor-color = #fff
 macos-option-as-alt = true
+font-size = 18
