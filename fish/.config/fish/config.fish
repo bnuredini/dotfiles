@@ -5,7 +5,7 @@
 set --universal --export GOPATH $HOME/.local/go
 set --universal --export VISUAL nvim
 set --universal --export EDITOR nvim
-set -gx TERM xterm-256color
+set --global    --export TERM xterm-256color
 
 fish_add_path $GOPATH/bin
 fish_add_path $HOME/code/scripts
